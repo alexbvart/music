@@ -28,7 +28,7 @@
     background-color: var(--card-background);
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 560px) {
 
     .logo{
         display: none;
@@ -46,6 +46,8 @@
         top: 332px;
         left: 0;
         right: 0;
+
+        z-index: 100;
     }
     .list {
         height: 100%;
@@ -64,6 +66,11 @@
         margin-bottom: 0;
     }
     .list li:last-child{
+        display: none;
+    }
+}
+@media screen and (max-width: 446px) {
+    .item svg{
         display: none;
     }
 }

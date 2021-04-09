@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import AppLayout from '../components/AppLayout'
+import Hero from '../components/Hero'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -7,7 +8,9 @@ export default function Home() {
 
     <>
         <AppLayout>
-          aqui va el home
+          <Hero>
+            
+          </Hero>
         </AppLayout>
     </>
 

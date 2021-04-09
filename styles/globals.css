@@ -5,6 +5,7 @@
   /* * FONTS */
 
   --title-headers-font-size: 48px;
+  --title-headers-weight-semi-bold: bold;
   --title-headers-weight-bold: 800;
   
   --title-for-section-font-size: 36px;

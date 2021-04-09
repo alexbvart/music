@@ -1,0 +1,9 @@
+.card_horizontal{
+    display: flex;
+    align-items: center;
+}
+.card_horizontal img{
+    height: 100%;
+    border-radius: var(--border-radius);
+    margin-right: var(--padding-between-elements);
+}
