@@ -4,7 +4,7 @@ import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
-const Section = ({ title, subtitle, isPlayList=false }) => {
+const Section = ({ title, subtitle="", isPlayList=false }) => {
 
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions

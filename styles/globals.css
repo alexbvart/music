@@ -104,7 +104,11 @@ a {
   width: calc(100% - var(--wrapper-margin));
   margin: auto;
 }
-
+.title-headers{
+  font-size: var(--title-headers-font-size);
+  font-weight: var(--title-headers-weight-bold);
+  line-height: 106.9%;
+}
 .title-for-section{
   font-size: var(--title-for-section-font-size);
   font-weight: var(--title-for-section-weight-semi-bold);
