@@ -25,7 +25,7 @@ const Hero = () => {
                     
                     {
                         cardHorizontal.map((card)  => (
-                            <CardHorizontal title={card.title} img={card.img} />
+                            <CardHorizontal key={card.title} title={card.title} img={card.img} />
                         ))
                     }
                 </div>
