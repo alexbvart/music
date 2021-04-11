@@ -10,7 +10,7 @@
 .main_section {
   grid-area: main;
   background-image: var(--base-home-gradient);
-  width: 100%;
+  width: 100vw;
   height: 100%;
   min-height: 100vh;
 }
