@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackCardBlock from '../../shares/TrackCardBlock';
 import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 const Section = () => {
@@ -74,11 +75,11 @@ const Section = () => {
                     <span className="average-font-size-medium">66 </span> song
                 </header>
 
+                        {/* <TrackCardInline img={track.img} name={track.title} artist={track.author} /> */}
                 {
                     liked.map((track) => (
-                        <TrackCardInline img={track.img} name={track.title} artist={track.author}>
+                        <TrackCardBlock img={track.img} title={track.title} description={track.author} />
 
-                        </TrackCardInline>
                     ))
                 }
 

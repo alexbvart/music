@@ -1,0 +1,18 @@
+.card{
+    padding: var(--padding-between-elements);
+    border-radius: var(--border-radius);
+    width: 100%;
+
+}
+.card:hover{
+    background-color: var(--card-background);
+
+}
+
+.card img{
+    width: 190px;
+    height: 190px;
+    border-radius: var(--border-radius);
+
+}
+
