@@ -1,7 +1,7 @@
 .hero{
 
     width: calc(100% - 88px);
-    margin: 100px auto 0 auto;
+    margin: 100px auto 100px auto;
 
     display: grid;
     grid-auto-flow: dense;
@@ -29,6 +29,8 @@
     background-image: 
         /* * este es el degradado base, sobre el cual se aplicara el filtro, el negro al 80% toma las partes oscuras y les pone luz, y el 0%  no pone luz sobre ninguna sombra*/
         linear-gradient(180deg, rgba(0, 0, 0, 0.8)  55%, rgba(0, 0, 0, 0.096) 85%);
+    font-size: var(--title-headers-font-size);
+    font-weight: var(--title-headers-weight-semi-bold);
 }
 .flow::before{
     content: "";
@@ -78,13 +80,15 @@
     .hero{
         width: 100%;
         height: 375px;
-        margin: 0;
+        margin-top: 0;
+        border-radius: 0;
 
     }
 
     .flow::before{
         filter: contrast(80%)  brightness(80%) opacity(50%);
         border-radius: 0;
+        
 
         /* filter: contrast(120%) , brightness(80%); */
     }

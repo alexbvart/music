@@ -1,26 +1,24 @@
-.app_wrapper{
-/*   background-color: red; */
+.app_wrapper {
+  /*   background-color: red; */
   width: 100%;
   height: 100%;
-
   display: grid;
   grid-template-columns: var(--nav-bar-width) 1fr;
   grid-template-areas: "navbar main";
 }
 
-.main_section{
+.main_section {
   grid-area: main;
   background-image: var(--base-home-gradient);
   width: 100%;
   height: 100%;
   min-height: 100vh;
-
 }
 
-@media screen and (max-width: 560px){
-  .app_wrapper{
-/*       background: blue; */
-      grid-template-columns: 1fr;
-      grid-template-areas: "main";
+@media screen and (max-width: 560px) {
+  .app_wrapper {
+    /*       background: blue; */
+    grid-template-columns: 1fr;
+    grid-template-areas: "navbar" "main";
   }
 }

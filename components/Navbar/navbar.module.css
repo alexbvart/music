@@ -1,6 +1,11 @@
 .nav_bar {
     width: 230px;
-    height: 100vh;
+    
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+
     background-color: var(--nav-bar-background);
     color: var(--white-color-des-active);
     font-size: var(--average-font-size);
@@ -42,7 +47,7 @@
         margin: auto;
         display: block;
         align-items: center;
-        position: fixed;
+        position: absolute;
         top: 332px;
         left: 0;
         right: 0;

@@ -9,7 +9,7 @@
   --title-headers-weight-bold: 800;
   
   --title-for-section-font-size: 36px;
-  --title-headers-weight-semi-bold: 600;
+  --title-for-section-weight-semi-bold: 600;
   
   --average-font-size: 14px;
   --average-font-weight-medium: 500;
@@ -28,7 +28,8 @@
   ;
 
   --white-color-active: #E2DEE2;
-  --white-color-des-active: #DEE1EC;
+  --white-color-des-active: rgba(222, 225, 236, 0.7);
+  ;
 
   --gray: #131213;
 
@@ -53,7 +54,7 @@
 
   --padding-between-elements: 12px;
   --padding-between-sections: 24px;
-
+  --wrapper-margin: 40px;
 
   --player-bar-background: rgba(0, 0, 0, 0.1);
   --player-bar-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
@@ -84,4 +85,47 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.wrapper-margin{
+  width: calc(100% - var(--wrapper-margin));
+  margin: auto;
+}
+
+.title-for-section{
+  font-size: var(--title-for-section-font-size);
+  font-weight: var(--title-for-section-weight-semi-bold);
+}
+
+.average-font-size-medium{
+  font-size: var(--average-font-size);
+  font-weight: var(--average-font-weight-medium);
+}
+
+.average-font-size-semi-bold{
+  font-size: var(--average-font-size);
+  font-weight: var(--average-font-weight-semi-bold);
+}
+
+.average-font-size-bold{
+  font-size: var(--average-font-size);
+  font-weight: var(--average-font-weight-bold);
+}
+
+.description-font-size-medium{
+  font-size: var(--description-font-size);
+  font-weight: var(--description-weight-medium);
+}
+.description-font-size-semi-bold{
+  font-size: var(--description-font-size);
+  font-weight: var(--description-weight-semi-bold);
+}
+
+
+@media screen and (max-width: 560px) {
+
+  :root{
+    --wrapper-margin: 24px;
+  }
+
 }

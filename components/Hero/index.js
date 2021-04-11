@@ -18,7 +18,7 @@ const Hero = () => {
 
     return (
         <>
-            <div className={hero.hero}>
+            <div className={hero.hero} >
                 <span className={hero.copy} >Listen to what you want</span>
                 <article className={hero.flow}>Flow</article>
                 <div className={hero.recommended}>

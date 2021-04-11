@@ -1,0 +1,37 @@
+.track{
+/*     background-color: red; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 24px 2fr 1fr .5fr;
+    grid-gap: calc(var(--padding-between-elements) * 2);
+    justify-content: baseline;
+    align-items: center;
+}
+.track_info{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: calc(var(--padding-between-elements) * 2);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.track_info img{
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius);
+}
+
+
+
+@media screen and (max-width: 560px) {
+
+    .track{
+        grid-template-columns: 1fr;
+    }
+    .action,
+    .album,
+    .duration{
+        display: none;
+    }
+
+}
