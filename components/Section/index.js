@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TrackCardBlock from '../../shares/TrackCardBlock';
 import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
-const Section = () => {
+const Section = ({ title, subtitle, isPlayList=false }) => {
 
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions
@@ -73,19 +73,27 @@ const Section = () => {
         }
     ];
 
+
+    const typeCarrousel = isPlayList || width >= 560  ? section.carrouselhorizontal : section.carrouselvertical
+
     return (
         <>
             <section className="wrapper-margin">
                 <header className={section.header}>
-                    <div className="title-for-section">Liked</div>
-                    <span className="average-font-size-medium">66 </span> song
+                    <div className="title-for-section">{title}</div>
+                    {(subtitle !== "") ?
+                        <>
+                        <span className="average-font-size-medium">66 </span> {subtitle}
+                        </>
+                    : <span />
+                    }
                 </header>
 
-                <ul className={section.carrousel}>
+                <ul className={typeCarrousel} >
                     {
                         liked.map((track) => (
                             <>
-                                {width <= 560 ?
+                                {width <= 560 && !isPlayList ?
 
                                     <TrackCardInline key={track.title} img={track.img} name={track.title} artist={track.author} />
                                     :

@@ -9,7 +9,10 @@ export default function Home() {
 
     <>
           <Hero></Hero>
-          <Section ></Section>
+          <Section title="Liked" subtitle="song"></Section>
+          <Section title="Recently" subtitle="song"></Section>
+          <Section title="Top" subtitle=""></Section>
+          <Section title="Playlist" subtitle="list" isPlayList={true}></Section>
     </>
 
   )

@@ -1,12 +1,12 @@
 .hero{
 
-    width: calc(100% - 88px);
+    width: calc(100% - var(--wrapper-margin));
     margin: 100px auto 100px auto;
 
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr) );
-    grid-gap: var(--padding-between-elements);
+    grid-gap: calc(var(--padding-between-elements) * 2);
 }
 
 .copy,
