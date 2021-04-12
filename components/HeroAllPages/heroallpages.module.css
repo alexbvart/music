@@ -45,8 +45,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 } 
 .header img{
     display: none;
@@ -60,7 +58,6 @@
 @media screen and (min-width: 560px) {
 
     .header{
-
         display: grid;
         grid-gap: calc(var(--padding-between-elements) * 2);
         grid-auto-flow: column;
@@ -81,5 +78,6 @@
     }
     .img{
         height: 400px;
+        filter: blur(4px)
     }
 }
