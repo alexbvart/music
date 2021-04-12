@@ -12,9 +12,10 @@
 }
 
 .carrouselhorizontal {
-    /* background-color: red; */
+
     display: grid;
     width: 100%;
+
     grid-gap: calc(var(--padding-between-elements) * 1);
     grid-auto-flow: column;
     overflow-x: scroll;
@@ -23,8 +24,7 @@
 }
 
 .carrouselhorizontal:hover {
-    /*         
-    width: 200px;
+    /* width: 200px;
     transition: width 5s ease-in-out; */
 }
 
@@ -47,7 +47,8 @@
 
 @media screen and (min-width: 560px) {
     .carrouselhorizontal {
-        /* background-color: blue; */
-        width: 100%;
+
+    width: calc(100% - var(--nav-bar-width));
+
     }
 }

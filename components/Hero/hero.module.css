@@ -1,12 +1,17 @@
 .hero{
 
-    width: calc(100% - var(--wrapper-margin));
-    margin: 100px auto 100px auto;
+    background-color:red ;
+
+    width: calc(100vw - var(--nav-bar-width));
+    margin: 100px 0;
 
     display: grid;
+
+    justify-content: center;
+
     grid-auto-flow: dense;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr) );
-    grid-gap: calc(var(--padding-between-elements) * 2);
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    grid-gap: calc(var(--padding-between-elements));
 }
 
 .copy,
@@ -16,6 +21,7 @@
     align-items: center;
 }
 .copy{
+    width: 240px;
     font-size: var(--title-headers-font-size);
     font-weight: var(--title-headers-weight-semi-bold);
 }
@@ -78,11 +84,15 @@
 @media screen and (max-width: 560px) {
 
     .hero{
-        width: 100%;
+        background-color:aqua ;
+        width: 100vw;
         height: 375px;
         margin-top: 0;
         border-radius: 0;
 
+    }
+    .flow{
+        border-radius: 0;
     }
 
     .flow::before{

@@ -8,7 +8,7 @@ export default function Home() {
   return (
 
     <>
-          <Hero></Hero>
+{/*           <Hero></Hero> */}
           <Section title="Liked" subtitle="song"></Section>
           <Section title="Recently" subtitle="song"></Section>
           <Section title="Top" subtitle=""></Section>
