@@ -1,6 +1,6 @@
 .hero{
     width: calc(100vw - var(--nav-bar-width));
-    margin: 100px 0;
+    margin: 80px 0;
     padding: 0 var(--padding-between-elements);
 
     display: grid;
@@ -19,7 +19,6 @@
     align-items: center;
 }
 .copy{
-    width: 240px;
     font-size: var(--title-headers-font-size);
     font-weight: var(--title-headers-weight-semi-bold);
 }
@@ -66,7 +65,10 @@
 
 
 
-@media screen and (max-width: 1200px) and (min-width: 900px) {
+@media screen and (max-width: 995px) and (min-width: 720px) {
+    .hero{
+       /*  background-color: green */;
+    }
     .recommended{
         display: grid;
         grid-gap: var(--padding-between-elements);
@@ -82,13 +84,18 @@
 @media screen and (max-width: 560px) {
 
     .hero{
+        grid-template-columns: 1fr;
+
         width: 100vw;
         height: 375px;
         margin-top: 0;
         border-radius: 0;
+        /* background-color: blue; */
+        padding: 0;
 
     }
     .flow{
+        width: 100%;
         border-radius: 0;
     }
 

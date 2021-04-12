@@ -4,7 +4,7 @@ import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
-const Section = ({ title, subtitle="", isPlayList=false }) => {
+const Section = ({ title, subtitle = "", isPlayList = false }) => {
 
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions
@@ -74,7 +74,7 @@ const Section = ({ title, subtitle="", isPlayList=false }) => {
     ];
 
 
-    const typeCarrousel = isPlayList || width >= 560  ? section.carrouselhorizontal : section.carrouselvertical
+    const typeCarrousel = isPlayList || width >= 560 ? section.carrouselhorizontal : section.carrouselvertical
 
     return (
         <>
@@ -83,9 +83,9 @@ const Section = ({ title, subtitle="", isPlayList=false }) => {
                     <div className="title-for-section">{title}</div>
                     {(subtitle !== "") ?
                         <>
-                        <span className="average-font-size-medium">66 </span> {subtitle}
+                            <span className="average-font-size-medium">66 </span> {subtitle}
                         </>
-                    : <span />
+                        : <span />
                     }
                 </header>
 
@@ -97,15 +97,14 @@ const Section = ({ title, subtitle="", isPlayList=false }) => {
 
                                     <TrackCardInline key={track.title} img={track.img} name={track.title} artist={track.author} />
                                     :
-                                    <TrackCardBlock img={track.img} title={track.title} description={track.author} />
+                                    <TrackCardBlock key={track.title} img={track.img} title={track.title} description={track.author} />
                                 }
                             </>
                         ))
                     }
                 </ul>
-
-
             </section>
+
         </>
     );
 }

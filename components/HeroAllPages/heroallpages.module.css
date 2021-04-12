@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
 }
 
 .img{
@@ -24,12 +25,13 @@
     width: 100%;
     height: 100%;
 
-    background-image: 
+/*     background-image: 
     linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 0.25) 80%), 
     linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 0.6) 95%), 
     linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 1) 100%), 
-        /* * oscurece la parte inferior de la caratula, para al aplicarle el filtro lighten, lo tome como negativo  */
+        /* * oscurece la parte inferior de la caratula, para al aplicarle el filtro lighten, lo tome como negativo  
         url(https://e-cdns-images.dzcdn.net/images/cover/83ccb7389fc36648b70c6d7865fcdf25/380x380-000000-80-0-0.jpg);
+     */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,7 +63,7 @@
         display: grid;
         grid-gap: calc(var(--padding-between-elements) * 2);
         grid-auto-flow: column;
-        justify-content: flex-start;
+        justify-content: start;
         align-items: flex-end;
     }
     .header img{
@@ -78,6 +80,7 @@
     }
     .img{
         height: 400px;
-        filter: blur(4px)
+        filter: blur(8px)
+        opacity(80%)
     }
 }

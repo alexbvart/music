@@ -8,11 +8,11 @@
     width: 100%;
     display: grid;
     grid-gap: calc(var(--padding-between-elements) * 0);
+    margin-bottom: 40px;
     /*     background-color: blue; */
 }
 
 .carrouselhorizontal {
-
     display: grid;
     width: 100%;
 
@@ -34,6 +34,7 @@
     background: rgba(250, 244, 240, 0.01);
     backdrop-filter: blur(100px);
     opacity: 1;
+    cursor: pointer;
 }
 
 .carrouselhorizontal:hover::-webkit-scrollbar {
@@ -47,8 +48,7 @@
 
 @media screen and (min-width: 560px) {
     .carrouselhorizontal {
-
-    width: calc(100% - var(--nav-bar-width));
+        width: calc(100% - var(--nav-bar-width));
 
     }
 }

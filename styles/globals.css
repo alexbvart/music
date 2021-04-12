@@ -69,9 +69,13 @@
 html,
 body {
   width: 100vw;
+  min-width: 320px;
   padding: 0;
   margin: 0;
-  background-color: var(--base-home-gradient);
+  user-select: none;
+
+
+  /* background-color: var(--base-home-gradient); */
   color: var(--white-color-des-active);
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
