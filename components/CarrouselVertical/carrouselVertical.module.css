@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 40px;
+}
+
+.carrouselvertical {
+    width: 100%;
+    display: grid;
+    grid-gap: calc(var(--padding-between-elements) * 0);
+    margin-bottom: 40px;
+    /*     background-color: blue; */
+}

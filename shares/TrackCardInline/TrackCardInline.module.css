@@ -1,5 +1,5 @@
 .track{
-/*     background-color: red; */
+    width: calc(100% - var(--nav-bar-width));
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 24px 2fr 1fr .5fr;
@@ -33,6 +33,7 @@
 @media screen and (max-width: 560px) {
 
     .track{
+        width: 100%;
         grid-template-columns: 1fr;
     }
     .action,

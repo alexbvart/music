@@ -1,32 +1,50 @@
 import React, {useState} from 'react';
 import HeroAllPages from '../../components/HeroAllPages';
-import Section from '../../components/Section'
-const Playlist = () => {
+import CarrouselVertical from '../../components/CarrouselVertical'
+import axios from 'axios'
+import { usePalette } from 'react-palette'
 
+const Playlist = ({datalist}) => {
 
-    const datapage = {
-        type: "Album",
-        title: "OASIS",
-        description:"Jbalbin",
-        img:"https://e-cdns-images.dzcdn.net/images/cover/83ccb7389fc36648b70c6d7865fcdf25/380x380-000000-80-0-0.jpg",
-        list: []
-    }
+    console.log(datalist);
 
+    const { data, loading, error } = usePalette(datalist.picture_medium)
 
+    console.log("color: ", data, error);
+    const color = data.lightVibrant;
 
     return ( 
         <>
-            <HeroAllPages data={datapage}></HeroAllPages>
-            <Section />
+            <main>
+                <HeroAllPages data={datalist}></HeroAllPages>
+                <CarrouselVertical list={datalist.tracks.data} />
+            </main>
+        
             <style global jsx>{`
                 :root{
                     --base-home-gradient: 
-                    
-                    linear-gradient(341.09deg, #131213 47.45%, #f09EFD 98.64%);
-
+                    linear-gradient(341.09deg, #131213 50%, ${color}  100%);
                 }
+                @media screen and (max-width: 560px) {
+                    main{
+                        z-index:99999;
+                    }
+                }
+
+                
             `}</style>
         </>
     );
 }
 export default Playlist;
+
+Playlist.getInitialProps = async ()=>{
+    const type= "playlist"
+    const idlist = "6135616484"
+    return fetch(`https://api.deezer.com/${type}/${idlist}`)
+        .then(res=>res.json())
+        .then(response=>{
+            const datalist=response;
+            return {datalist}
+        })
+}
