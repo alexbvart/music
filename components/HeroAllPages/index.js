@@ -1,11 +1,20 @@
 import React from 'react';
-import heroap from './heroallpages.module.css';
+import heroallpages from './heroallpages.module.css';
 const HeroAllPages = ({ data }) => {
+
     return (
-        <div className={heroap.container}>
-            <figure className={heroap.img} />
-            <div className={heroap.header}>
-                <img src={data.picture_medium} alt={data.title} />
+        <div className={heroallpages.container}>
+
+            <figure className={heroallpages.img} />
+            
+            <div className={heroallpages.header}>
+                <img src={data.picture_medium} alt={data.title} 
+                    srcset={`${data.picture_big} 2x, 
+                            ${data.picture_big}  768w, 
+                            ${data.picture_xl}  768w 2x, 
+                            ${data.picture_xl}, 
+                            ${data.picture_xl} 2x` }
+                />
                 <article className="average-font-size-medium">
                     <div className="average-font-size-bold" >| {data.type} </div>
                     <h1 className="title-headers">{data.title} </h1>

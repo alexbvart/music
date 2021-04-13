@@ -23,8 +23,9 @@ const CarrouselVertical = ({ title, subtitle = "", list=[] }) => {
                                     key={track.id} 
                                     img={track.album.cover_xl} 
                                     name={track.title_short} 
-                                    artist={track.artist.name} 
+                                    artist={track.artist} 
                                     duration={track.duration}
+                                    album={track.album}
                                 />
                             </>
                         ))

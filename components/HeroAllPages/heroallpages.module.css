@@ -62,13 +62,13 @@
 }
 
 
-@media screen and (min-width: 560px) and (max-width: 760px){
+@media screen and (min-width: 560px) and (max-width: 860px){
     .container{
         width: calc(100% - var(--nav-bar-width));
     }
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 860px) {
 
     .container{
         width: calc(100% - var(--nav-bar-width));

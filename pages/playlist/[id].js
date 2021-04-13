@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroAllPages from '../../components/HeroAllPages';
 import CarrouselVertical from '../../components/CarrouselVertical'
 
-import { useRouter } from 'next/router'
+
 import { usePalette } from 'react-palette'
 
 const Playlist = ({ datalist }) => {
 
-    const router = useRouter()
-    const { id } = router.query;
+    
 
     console.log(datalist);
     const { data, loading, error } = usePalette(datalist.picture_medium)
+    
+    const baseGradientInitial = `linear-gradient(341.09deg, #131213 50%, #15386C  100%)`
+    const [baseGradient, setBaseGradient] = useState(baseGradientInitial)
 
-    console.log("color: ", data, error);
-    const color = data.darkVibrant;
+    useEffect(() => {
+        if (!loading) {
+            console.log("colorlisto",data);
+            setBaseGradient(`linear-gradient(341.09deg, #131213 50%, ${data.darkVibrant}  100%)`)
+        }
+        return () => {
+            console.log("desmontar");
+        }
+    }, [loading])
+
+    console.log("color d: ", data);
+    console.log("color e: ", error);
+    console.log("color l: ", loading);
+
 
     return (
         <>
@@ -23,12 +37,16 @@ const Playlist = ({ datalist }) => {
                 <CarrouselVertical list={datalist.tracks.data} />
             </main>
 
-            <style global jsx>{`
+
+                <style global jsx>{`
                 :root{
-                    --base-home-gradient: 
-                    linear-gradient(341.09deg, #131213 50%, ${color}  100%);
+                    --base-home-gradient: ${baseGradient}
+                    ;
                 }
             `}</style>
+            
+
+            
 
             <style global jsx>{`
                 @media screen and (max-width: 560px) {

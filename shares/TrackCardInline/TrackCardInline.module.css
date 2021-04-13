@@ -2,7 +2,7 @@
     width: calc(100% - var(--nav-bar-width));
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 24px 2fr 1fr .5fr;
+    grid-template-columns: 24px 2fr 1fr auto;
     grid-gap: calc(var(--padding-between-elements) * 2);
     justify-content: baseline;
     align-items: center;
@@ -30,6 +30,21 @@
 
 
 
+@media screen and (min-width: 660px) and (max-width: 860px){
+    .album,
+    .duration{
+        font-size: var(--average-font-size);
+        font-weight: var(--average-font-weight-medium);
+    }
+}
+@media screen and (min-width: 560px) and (max-width: 660px){
+    .duration{
+        display: none;
+    }
+    .track{
+        grid-template-columns: 24px 2fr 1fr;
+    }
+}
 @media screen and (max-width: 560px) {
 
     .track{
