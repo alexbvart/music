@@ -1,6 +1,10 @@
 import React from 'react';
 import trackCardInline from './TrackCardInline.module.css'
-const TrackCardInline = ({img,name,artist}) => {
+import useDurationTrack from '../../hooks/useDurationTrack'
+const TrackCardInline = ({img,name,artist,duration}) => {
+
+    const durationString = useDurationTrack(duration)
+
     return ( 
         <>
             <div className={trackCardInline.track}>
@@ -19,7 +23,7 @@ const TrackCardInline = ({img,name,artist}) => {
                     {name}
                 </div>
                 <div className={trackCardInline.duration}>
-                    3:35
+                    {durationString}
                 </div>
             </div>
         </>

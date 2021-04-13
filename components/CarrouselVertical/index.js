@@ -19,7 +19,13 @@ const CarrouselVertical = ({ title, subtitle = "", list=[] }) => {
                     {
                         list.map((track) => (
                             <>
-                                <TrackCardInline key={track.id} img={track.album.cover_xl} name={track.title} artist={track.artist.name} />
+                                <TrackCardInline 
+                                    key={track.id} 
+                                    img={track.album.cover_xl} 
+                                    name={track.title_short} 
+                                    artist={track.artist.name} 
+                                    duration={track.duration}
+                                />
                             </>
                         ))
                     }
