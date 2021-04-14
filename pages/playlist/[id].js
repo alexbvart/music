@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HeroAllPages from '../../components/HeroAllPages';
 import CarrouselVertical from '../../components/CarrouselVertical'
+import Head from 'next/head'
 
 
 import { usePalette } from 'react-palette'
@@ -14,11 +15,13 @@ const Playlist = ({ datalist }) => {
     
     const baseGradientInitial = `linear-gradient(341.09deg, #131213 50%, #15386C  100%)`
     const [baseGradient, setBaseGradient] = useState(baseGradientInitial)
+    const [colorBase, setColorBase] = useState("#15386C")
 
     useEffect(() => {
         if (!loading) {
             console.log("colorlisto",data);
             setBaseGradient(`linear-gradient(341.09deg, #131213 50%, ${data.darkVibrant}  100%)`)
+            setColorBase(data.darkVibrant)
         }
         return () => {
             console.log("desmontar");
@@ -32,11 +35,16 @@ const Playlist = ({ datalist }) => {
 
     return (
         <>
+            <Head>
+                <title>{datalist.title} </title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="theme-color" content={colorBase} />
+            </Head>
+            
             <main>
                 <HeroAllPages data={datalist}></HeroAllPages>
                 <CarrouselVertical list={datalist.tracks.data} />
             </main>
-
 
                 <style global jsx>{`
                 :root{
@@ -44,8 +52,6 @@ const Playlist = ({ datalist }) => {
                     ;
                 }
             `}</style>
-            
-
             
 
             <style global jsx>{`

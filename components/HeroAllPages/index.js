@@ -3,13 +3,17 @@ import heroallpages from './heroallpages.module.css';
 const HeroAllPages = ({ data }) => {
 
     return (
+        <>
         <div className={heroallpages.container}>
 
             <figure className={heroallpages.img} />
             
             <div className={heroallpages.header}>
-                <img src={data.picture_medium} alt={data.title} 
-                    srcset={`${data.picture_big} 2x, 
+                <img 
+                    src={data.picture_medium} 
+                    alt={data.title} 
+                    loading="lazy"
+                    srcSet={`${data.picture_big} 2x, 
                             ${data.picture_big}  768w, 
                             ${data.picture_xl}  768w 2x, 
                             ${data.picture_xl}, 
@@ -17,8 +21,8 @@ const HeroAllPages = ({ data }) => {
                 />
                 <article className="average-font-size-medium">
                     <div className="average-font-size-bold" >| {data.type} </div>
-                    <h1 className="title-headers">{data.title} </h1>
-                    <h2 className="average-font-size-semi-bold">{data.description} </h2>
+                    <h1 className="title-headers">{data.title.substring(0,40) } </h1>
+                    <h2 className="average-font-size-semi-bold">{data.description.substring(0,80)} </h2>
                     <span>{data.nb_tracks} </span>song
                 </article>
             </div>
@@ -34,6 +38,7 @@ const HeroAllPages = ({ data }) => {
             }
             `}</style>
         </div>
+        </>
     );
 }
 export default HeroAllPages;

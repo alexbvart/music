@@ -17,12 +17,15 @@
 .track_info{
     display: grid;
     grid-auto-flow: column;
+    grid-template-columns: 64px 1fr;
     grid-gap: calc(var(--padding-between-elements) * 2);
     justify-content: flex-start;
     align-items: center;
 }
 
-.track_info img{
+.track_info img,
+.track_info Image
+{
     width: 64px;
     height: 64px;
     border-radius: var(--border-radius);
