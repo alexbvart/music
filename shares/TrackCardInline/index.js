@@ -7,7 +7,7 @@ import CoverImage from '../CoverImage';
 const TrackCardInline = ({name,artist,duration,album}) => {
 
     const durationString = useDurationTrack(duration)
-    console.log(album);
+/*     console.log("data: ",name,artist,duration,album); */
     return ( 
         <>
             <div className={trackCardInline.track}>

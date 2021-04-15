@@ -4,10 +4,16 @@ import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
-const Section = ({ title, subtitle = "", isPlayList = false, list=[] }) => {
+const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
 
+    console.log({ list });
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions
+
+    /*     list.map((cover)=>(
+            console.log(cover.album)
+        )) */
+
 
     const typeCarrousel = isPlayList || width >= 560 ? section.carrouselhorizontal : section.carrouselvertical
 
@@ -18,7 +24,7 @@ const Section = ({ title, subtitle = "", isPlayList = false, list=[] }) => {
                     <div className="title-for-section">{title}</div>
                     {(subtitle !== "") ?
                         <>
-                            <span className="average-font-size-medium">66 </span> {subtitle}
+                            <span className="average-font-size-medium">10 </span> {subtitle}
                         </>
                         : <span />
                     }
@@ -29,10 +35,9 @@ const Section = ({ title, subtitle = "", isPlayList = false, list=[] }) => {
                         list.map((track) => (
                             <>
                                 {width <= 560 && !isPlayList ?
-
-                                    <TrackCardInline key={track.id} img={track.album.cover_xl} name={track.title} artist={track.artist.name} />
+                                    (<TrackCardInline key={track.id} name={track.title} artist={track.artist} album={track.album} />)
                                     :
-                                    <TrackCardBlock key={track.id} img={track.album.cover_xl} title={track.title} description={track.artist.nam} />
+                                    (<TrackCardBlock key={track.id} title={track.title} description={track.artist.name} album={track.album} />)
                                 }
                             </>
                         ))
@@ -45,8 +50,3 @@ const Section = ({ title, subtitle = "", isPlayList = false, list=[] }) => {
 }
 export default Section;
 
-/* Section.getInitialProps = async () => {
-    return fetch('http://localhost:3000/api/liked')
-        .then(res=>res.json())
-
-} */
