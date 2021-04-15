@@ -1,13 +1,13 @@
 import React from 'react';
 import trackCardInline from './TrackCardInline.module.css'
 import useDurationTrack from '../../hooks/useDurationTrack'
-import Image from 'next/image'
+import CoverImage from '../CoverImage';
 
 
-const TrackCardInline = ({img,name,artist,duration,album}) => {
+const TrackCardInline = ({name,artist,duration,album}) => {
 
     const durationString = useDurationTrack(duration)
-
+    console.log(album);
     return ( 
         <>
             <div className={trackCardInline.track}>
@@ -16,14 +16,14 @@ const TrackCardInline = ({img,name,artist,duration,album}) => {
                 </div>
                 <div className={trackCardInline.track_info}>
                 {/* todo probar esto y hacer un componente para cada imagen con su loading  */}
-                    <Image
-                        src={img} 
-                        alt={name}
-                        width={64}
-                        height={64}
+                    <CoverImage 
+                        alt={name} 
+                        src={album.cover_small} 
+                        small={album.cover_small}
+                        medium={album.cover_medium}
+                        big={album.cover_big}
+                        xl={album.cover_xl}
                     />
-                    <img src={img} alt={name} />
-
                     <div className="average-font-size-medium">
                         {name} <br />
                         <span className="description-font-size-medium">

@@ -21,7 +21,6 @@ const CarrouselVertical = ({ title, subtitle = "", list=[] }) => {
                             <>
                                 <TrackCardInline 
                                     key={track.id} 
-                                    img={track.album.cover_xl} 
                                     name={track.title_short} 
                                     artist={track.artist} 
                                     duration={track.duration}
