@@ -1,5 +1,9 @@
 import React from 'react';
+import CoverImage from '../../shares/CoverImage';
 import heroallpages from './heroallpages.module.css';
+
+import Subtitle from './subtitle';
+
 const HeroAllPages = ({ data }) => {
 
     return (
@@ -10,19 +14,24 @@ const HeroAllPages = ({ data }) => {
             
             <div className={heroallpages.header}>
                 <img 
-                    src={data.picture_medium} 
+                    className={heroallpages.cover_block}
+                    src={data.picture_medium||data.cover_medium} 
                     alt={data.title} 
                     loading="lazy"
-                    srcSet={`${data.picture_big} 2x, 
-                            ${data.picture_big}  768w, 
-                            ${data.picture_xl}  768w 2x, 
-                            ${data.picture_xl}, 
-                            ${data.picture_xl} 2x` }
+                    srcSet={`
+                            ${data.picture_big||data.cover_big} 2x, 
+                            ${data.picture_big||data.cover_big}  768w, 
+                            ${data.picture_xl||data.cover_xl}  768w 2x, 
+                            ${data.picture_xl||data.cover_xl}, 
+                            ${data.picture_xl||data.cover_xl} 2x` }
                 />
+{/*                 <CoverImage
+
+                /> */}
                 <article className="average-font-size-medium">
                     <div className="average-font-size-bold" >| {data.type} </div>
                     <h1 className="title-headers">{data.title.substring(0,40) } </h1>
-                    <h2 className="average-font-size-semi-bold">{data.description.substring(0,80)} </h2>
+                    <Subtitle type={data.type} data={data}/>
                     <span>{data.nb_tracks} </span>song
                 </article>
             </div>
@@ -34,7 +43,7 @@ const HeroAllPages = ({ data }) => {
                     linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 0.3) 95%), 
                     linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(0, 0, 0, 1) 100%), 
                         /* * oscurece la parte inferior de la caratula, para al aplicarle el filtro lighten, lo tome como negativo  */
-                        url(${data.picture_xl});
+                        url(${data.picture_xl||data.cover_xl});
             }
             `}</style>
         </div>

@@ -1,0 +1,34 @@
+.badge{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    padding: 2px;
+    margin-bottom: 4px;
+
+}
+.badge .badge_cover_image{
+    margin-right: -12px;
+}
+.badge_text{
+    transition: all .5s ease-out;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+.badge_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.badge:active,
+.badge:hover{
+    background-image: var(--hover-gradient);
+}
+.badge:active .badge_text,
+.badge:hover .badge_text{
+    opacity: 1;
+    width: auto;
+    margin: 0 12px 0 24px;
+}

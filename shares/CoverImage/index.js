@@ -1,5 +1,6 @@
 import React from 'react';
 const CoverImage = ({
+    className,
     alt,
     width=64,
     height=width,
@@ -10,7 +11,8 @@ const CoverImage = ({
 }) => {
     return ( 
         <>
-            <img 
+            <img
+                className={className}
                 width={width} 
                 height={height}
                 loading="lazy"

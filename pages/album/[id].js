@@ -2,16 +2,13 @@ import React from 'react';
 import HeroAllPages from '../../components/HeroAllPages';
 import CarrouselVertical from '../../components/CarrouselVertical'
 import Head from 'next/head'
-import useColorBase from '../../hooks/useColorBase';
 
 
-const Playlist = ({ datalist }) => {
+import useColorBase from '../../hooks/useColorBase'
 
-    
+const Album = ({ datalist }) => {
 
     const [colorBase,baseGradient] = useColorBase(datalist)
-
-
 
     return (
         <>
@@ -22,8 +19,8 @@ const Playlist = ({ datalist }) => {
             </Head>
             
             <main>
-                <HeroAllPages data={datalist}></HeroAllPages>
-                <CarrouselVertical list={datalist.tracks.data} />
+                <HeroAllPages data={datalist} />
+               {/*  <CarrouselVertical list={datalist.tracks.data} /> */}
             </main>
 
                 <style global jsx>{`
@@ -45,13 +42,13 @@ const Playlist = ({ datalist }) => {
         </>
     );
 }
-export default Playlist;
+export default Album;
 
-Playlist.getInitialProps = async (context) => {
+Album.getInitialProps = async (context) => {
 
     const { query } = context;
     const { id } = query;
-    const type = "playlist"
+    const type = "album"
 
     return fetch(`https://api.deezer.com/${type}/${id}`)
         .then(res => res.json())
