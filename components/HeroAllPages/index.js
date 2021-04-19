@@ -3,8 +3,10 @@ import CoverImage from '../../shares/CoverImage';
 import heroallpages from './heroallpages.module.css';
 
 import Subtitle from './subtitle';
+import Title from './title';
 
 const HeroAllPages = ({ data }) => {
+
 
     return (
         <>
@@ -17,22 +19,16 @@ const HeroAllPages = ({ data }) => {
                     className={heroallpages.cover_block}
                     src={data.picture_medium||data.cover_medium} 
                     alt={data.title} 
-                    loading="lazy"
-                    srcSet={`
-                            ${data.picture_big||data.cover_big} 2x, 
-                            ${data.picture_big||data.cover_big}  768w, 
-                            ${data.picture_xl||data.cover_xl}  768w 2x, 
-                            ${data.picture_xl||data.cover_xl}, 
-                            ${data.picture_xl||data.cover_xl} 2x` }
+                    width={236}
+                    height={236}
                 />
-{/*                 <CoverImage
 
-                /> */}
                 <article className="average-font-size-medium">
                     <div className="average-font-size-bold" >| {data.type} </div>
-                    <h1 className="title-headers">{data.title.substring(0,40) } </h1>
+
+                    <Title type={data.type} data={data}/>
                     <Subtitle type={data.type} data={data}/>
-                    <span>{data.nb_tracks} </span>song
+                    <span>{data.nb_tracks||data.nb_album} </span>song
                 </article>
             </div>
 

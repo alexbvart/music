@@ -5,7 +5,7 @@ const CardHorizontal = ({children, img, title}) => {
     return (
         <>
             <article className={horizontal.card_horizontal}>
-                <img src={img} alt={title} loading="lazy" /> {title}
+                <img className={horizontal.card_horizontal_image} src={img} alt={title} loading="lazy" /> {title}
             </article>
         </>
     );

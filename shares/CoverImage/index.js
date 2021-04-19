@@ -1,30 +1,31 @@
-import React from 'react';
+import React from 'react'
+import Image from 'next/image'
+;
 const CoverImage = ({
     className,
     alt,
     width=64,
     height=width,
-    small,
-    medium,
-    big,
-    xl
+    src,
 }) => {
     return ( 
         <>
-            <img
+            <Image
+                src={src} 
                 className={className}
                 width={width} 
                 height={height}
                 loading="lazy"
                 alt={alt} 
-                src={small} 
-                srcSet={`
+                layout="fixed"
+
+                />
+{/*                                 srcSet={`
                         ${medium}  2x, 
                         ${medium}  560w, 
                         ${big}     560w 2x, 
                         ${big}     860w, 
-                        ${xl}      860w 2x` }
-                />
+                        ${xl}      860w 2x` } */}
             <style global jsx>{`
                 img{
                     width: ${width}px;

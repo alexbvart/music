@@ -4,16 +4,14 @@ import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
+import iamgesSrcSet from '../../repsitory/imagesSrcSet';
+
+
 const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
 
-    console.log({ list });
+
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions
-
-    /*     list.map((cover)=>(
-            console.log(cover.album)
-        )) */
-
 
     const typeCarrousel = isPlayList || width >= 560 ? section.carrouselhorizontal : section.carrouselvertical
 
@@ -34,14 +32,29 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                     {
                         list.map((track) => (
                             <>
-                                {width <= 560 && !isPlayList ?
-                                    (<TrackCardInline key={track.id} name={track.title} artist={track.artist} album={track.album} />)
+                                {
+                                    
+                                    width <= 560 && !isPlayList ?
+                                    (<TrackCardInline 
+                                        key={track.id} 
+                                        name={track.title} 
+                                        artist={track.artist} 
+                                        album={track.album} 
+                                        images={track.album.cover_medium} 
+                                    />)
                                     :
-                                    (<TrackCardBlock key={track.id} title={track.title} description={track.artist.name} album={track.album} />)
+                                    (<TrackCardBlock 
+                                        key={track.id} 
+                                        title={track.title} 
+                                        description={track.artist.name} 
+                                        album={track.album} 
+                                        images={track.album.cover_medium} 
+                                    />)
                                 }
                             </>
                         ))
                     }
+                                        {/* images={iamgesSrcSet(track)}  */}
                 </ul>
             </section>
 

@@ -41,12 +41,14 @@
     }
 }
 @media screen and (min-width: 560px) and (max-width: 660px){
+    .album,
     .duration{
         display: none;
     }
     .track{
-        grid-template-columns: 24px 2fr 1fr;
+        grid-template-columns: 24px 2fr ;
     }
+    
 }
 @media screen and (max-width: 560px) {
 

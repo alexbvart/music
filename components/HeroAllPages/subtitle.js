@@ -27,6 +27,13 @@ const Subtitle = ({type,data}) => {
         );
     }
 
+    if (type === "artist") {
+        return ( 
+            <>   
+                <h2 className="average-font-size-semi-bold"></h2>
+            </>
+        );
+    }
 
 }
 export default Subtitle;

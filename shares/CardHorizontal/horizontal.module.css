@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
 }
-.card_horizontal img{
+.card_horizontal_image{
+    width: 80px;
     height: 100%;
     border-radius: var(--border-radius);
     margin-right: var(--padding-between-elements);
