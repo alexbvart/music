@@ -2,39 +2,51 @@ import React from 'react';
 import trackCardInline from './TrackCardInline.module.css'
 import useDurationTrack from '../../hooks/useDurationTrack'
 import CoverImage from '../CoverImage';
-import Artist from './ArtistName';
 import ArtistName from './ArtistName';
 
+import Link from 'next/link'
 
-const TrackCardInline = ({images="", name,artist,duration,album}) => {
+
+const TrackCardInline = ({ images, name, artist, duration, album }) => {
 
     const durationString = useDurationTrack(duration)
-/*     console.log("data: ",name,artist,duration,album); */
-    return ( 
+
+    return (
         <>
             <div className={trackCardInline.track}>
                 <div className={trackCardInline.action}>
                     Ø
                 </div>
                 <div className={trackCardInline.track_info}>
-                {/* todo probar esto y hacer un componente para cada imagen con su loading  */}
-                    
-                    {images!==""?
-                        <CoverImage 
-                            alt={name} 
-                            src={images} 
-                        />                   
-                    : "" 
+                    {/* todo probar esto y hacer un componente para cada imagen con su loading  */}
+
+                    {images !== "" ?
+                        <CoverImage
+                            alt={name}
+                            src={`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`}
+                        />
+                        : ""
                     }
                     <div className="average-font-size-medium">
-                        {name} <br />
-
+                        {
+                            (album) ?
+                                <Link href={`/album/${album.id}`}>
+                                    <a>{name}</a>
+                                </Link>
+                                :
+                                name 
+                        }
+                        <br />
                         <ArtistName artist={artist} />
                     </div>
 
                 </div>
                 <div className={trackCardInline.album}>
-                    {album.title}
+                    {album &&
+                        <Link href={`/album/${album.id}`}>
+                            <a>{ album.title}</a>
+                        </Link>
+                    }
                 </div>
                 <div className={trackCardInline.duration}>
                     {durationString}

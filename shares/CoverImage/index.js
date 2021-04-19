@@ -18,14 +18,8 @@ const CoverImage = ({
                 loading="lazy"
                 alt={alt} 
                 layout="fixed"
+            />
 
-                />
-{/*                                 srcSet={`
-                        ${medium}  2x, 
-                        ${medium}  560w, 
-                        ${big}     560w 2x, 
-                        ${big}     860w, 
-                        ${xl}      860w 2x` } */}
             <style global jsx>{`
                 img{
                     width: ${width}px;

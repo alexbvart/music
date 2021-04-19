@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react'
+import Link from 'next/link'
+
 const ArtistName = ({ artist }) => {
 
     if (Array.isArray(artist)) {
@@ -7,7 +9,9 @@ const ArtistName = ({ artist }) => {
                 {
                     artist.map((a) => (
                         <span className="description-font-size-medium">
-                            {a.name}
+                            <Link href={`/artist/${a.id}`}>
+                                <a>{a.name}</a>
+                            </Link>
                         </span>
                     ))
                 }
@@ -18,7 +22,9 @@ const ArtistName = ({ artist }) => {
         return (
             <>
                 <span className="description-font-size-medium">
-                    {artist.name}
+                    <Link href={`/artist/${artist.id}`}>
+                        <a>{artist.name}</a>
+                    </Link>
                 </span>
             </>
         );

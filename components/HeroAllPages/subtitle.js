@@ -18,7 +18,7 @@ const Subtitle = ({type,data}) => {
                 <div className={subtitle.container_badges} >
                     {data.contributors.map((contributor) => (
                         <>
-                            <ArtistBadge contributor={contributor} />  
+                            <ArtistBadge key={contributor.id} contributor={contributor} />  
                         </>
                     ))} 
                 </div>

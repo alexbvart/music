@@ -73,8 +73,11 @@
     .list li:last-child{
         display: none;
     }
+    .list li:nth-last-child(2) {
+    padding-right: 0px; /* * playlist */
 }
-@media screen and (max-width: 446px) {
+}
+@media screen and (max-width: 460px) {
     .item svg{
         display: none;
     }

@@ -4,7 +4,7 @@ import TrackCardInline from '../../shares/TrackCardInline';
 import section from './section.module.css'
 
 import useWindowDimensions from '../../hooks/useWindowDimension';
-import iamgesSrcSet from '../../repsitory/imagesSrcSet';
+
 
 
 const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
@@ -36,19 +36,20 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                                     
                                     width <= 560 && !isPlayList ?
                                     (<TrackCardInline 
+                                        album={track.album} 
+                                        artist={track.artist} 
+                                        images={track.md5_image} 
                                         key={track.id} 
                                         name={track.title} 
-                                        artist={track.artist} 
-                                        album={track.album} 
-                                        images={track.album.cover_medium} 
                                     />)
                                     :
                                     (<TrackCardBlock 
+                                        album={track.album} 
+                                        artist={track.artist} 
+                                        description={track.artist.name} 
+                                        images={track.md5_image} 
                                         key={track.id} 
                                         title={track.title} 
-                                        description={track.artist.name} 
-                                        album={track.album} 
-                                        images={track.album.cover_medium} 
                                     />)
                                 }
                             </>

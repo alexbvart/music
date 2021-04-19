@@ -3,7 +3,7 @@ import { usePalette } from 'react-palette'
 
 const useColorBase = (datalist) => {
 
-    console.log("entradata ", datalist);
+    /* console.log("entradata ", datalist) */;
     const { data, loading, error } = usePalette(datalist.picture_medium||datalist.cover_medium)
     
     const baseGradientInitial = `linear-gradient(341.09deg, #131213 50%, #15386C  100%)`

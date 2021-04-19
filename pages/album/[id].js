@@ -20,7 +20,7 @@ const Album = ({ datalist }) => {
             
             <main>
                 <HeroAllPages data={datalist} />
-               {/*  <CarrouselVertical list={datalist.tracks.data} /> */}
+                <CarrouselVertical list={datalist.tracks.data} />
             </main>
 
                 <style global jsx>{`
