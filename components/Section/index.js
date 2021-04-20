@@ -40,15 +40,17 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                                             images={track.md5_image}
                                             key={track.id}
                                             name={track.title}
+                                            type={track.type}
                                         />)
                                         :
                                         (<TrackCardBlock
                                             album={track.album}
-                                            artist={track.artist}
-                                            description={track.artist.name}
+                                            artist={track.artist||track.user}
                                             images={track.md5_image}
                                             key={track.id}
                                             title={track.title}
+                                            type={track.type}
+                                            id={track.id}
                                         />)
                                 }
                             </>

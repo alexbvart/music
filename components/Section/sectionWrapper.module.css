@@ -5,12 +5,15 @@
     display: grid;
     grid-gap: calc(var(--padding-between-sections) * 4);
     margin-bottom: 40px;
+    margin-bottom: calc(var(--padding-between-sections) * 2);
+
 }
 
 .carrouselhorizontal {
     display: grid;
     width: 100%;
     height: auto;
+    margin-bottom: calc(var(--padding-between-sections) * 3);
 
 
     grid-gap: 0px;

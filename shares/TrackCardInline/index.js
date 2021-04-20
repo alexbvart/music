@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import trackCardInline from './TrackCardInline.module.css'
 import useDurationTrack from '../../hooks/useDurationTrack'
 import CoverImage from '../CoverImage';
@@ -7,10 +7,20 @@ import ArtistName from './ArtistName';
 import Link from 'next/link'
 
 
-const TrackCardInline = ({ images, name, artist, duration, album }) => {
+const TrackCardInline = ({ images, name, artist, duration, album, type }) => {
 
     const durationString = useDurationTrack(duration)
+    console.log(type);
+    const [imgUrl, setImgUrl] = useState(`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`)
 
+    useEffect(() => {
+        if (type==="playlist") {
+        setImgUrl(`https://cdns-images.dzcdn.net/images/playlist/${images}/500x500-000000-80-0-0.jpg`);
+        } 
+        return () => {
+            
+        }
+    }, [])
     return (
         <>
             <div className={trackCardInline.track}>
@@ -23,7 +33,7 @@ const TrackCardInline = ({ images, name, artist, duration, album }) => {
                     {images !== "" ?
                         <CoverImage
                             alt={name}
-                            src={`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`}
+                            src={imgUrl}
                         />
                         : ""
                     }
@@ -37,7 +47,7 @@ const TrackCardInline = ({ images, name, artist, duration, album }) => {
                                 name 
                         }
                         <br />
-                        <ArtistName artist={artist} />
+                        {artist && <ArtistName artist={artist} />}
                     </div>
 
                 </div>

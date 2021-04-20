@@ -17,10 +17,10 @@ export default function Home({ datalist }) {
 
       <Hero></Hero>
       <SectionWrapper>
-        <Section id="Liked" list={datalist.tracks.data} title="Liked" subtitle="song"></Section>
-        <Section id="Recently" list={datalist.tracks.data} title="Liked" subtitle="song"></Section>
-        <Section id="Topp" list={datalist.tracks.data} title="Liked" subtitle="song"></Section>
-        <Section id="Playlist" list={datalist.tracks.data} title="Liked" subtitle="song"></Section>
+        <Section id="Liked" list={datalist.tracks.data} title="Liked" subtitle="song" isPlayList={false}></Section>
+        <Section id="Recently" list={datalist.tracks.data} title="Recently" subtitle="song" isPlayList={false}></Section>
+        <Section id="Topp" list={datalist.tracks.data} title="Top" subtitle="song" isPlayList={false}></Section>
+        <Section id="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" isPlayList={true}></Section>
       </SectionWrapper>
       {/*           <Section list={datalist.artists.data} title="Recently" subtitle="song"></Section>
           <Section list={datalist.albums.data} title="Top" subtitle=""></Section>

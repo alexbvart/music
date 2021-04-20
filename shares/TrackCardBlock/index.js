@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import CoverImage from '../CoverImage';
 import block from './TrackCardBlock.module.css'
 
-const TrackCardBlock = ({ title, description, images, album, artist }) => {
+const TrackCardBlock = ({ title, images, album, artist, type ,id}) => {
+console.log(type);
+    const [imgUrl, setImgUrl] = useState(`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`)
+
+    useEffect(() => {
+        if (type==="playlist") {
+        setImgUrl(`https://cdns-images.dzcdn.net/images/playlist/${images}/500x500-000000-80-0-0.jpg`);
+        } 
+        return () => {
+            
+        }
+    }, [])
 
     return (
         <>
@@ -14,7 +25,7 @@ const TrackCardBlock = ({ title, description, images, album, artist }) => {
                     width={190}
                     height={190}
                     alt={title}
-                    src={`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`}
+                    src={imgUrl}
                 />
                 {
                     (album) ?
@@ -24,7 +35,11 @@ const TrackCardBlock = ({ title, description, images, album, artist }) => {
                             </a>
                         </Link>
                         :
-                        <h3 className="average-font-size-semi-bold">{title} </h3>
+                        <Link href={`/playlist/${id}`}>
+                            <a>
+                                <h3 className="average-font-size-semi-bold">{title} </h3>
+                            </a>
+                        </Link>
                 }
                 {
                     (album) ?
