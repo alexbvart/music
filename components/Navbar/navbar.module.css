@@ -19,7 +19,7 @@
 }
 
 
-.list .item {
+.list .item a{
     height: 40px;
     margin-bottom: var(--padding-between-elements);
     margin-left:var(--padding-between-elements) ;
@@ -65,7 +65,7 @@
         background-color: var(--nav-bar-background);
         list-style-type: none;
     }
-    .list .item {
+    .list .item a{
         padding-right: var(--padding-between-elements);
         margin: 0;
         margin-bottom: 0;
@@ -73,7 +73,7 @@
     .list li:last-child{
         display: none;
     }
-    .list li:nth-last-child(2) {
+    .list li a:nth-last-child(2) {
     padding-right: 0px; /* * playlist */
 }
 }

@@ -59,6 +59,7 @@ Artist.getInitialProps = async (context) => {
     const listTrack = await fetch(`https://api.deezer.com/${type}/${id}/top?limit=${limit}`)
         .then(res => res.json())
 
+
     return {
         artist: artist,
         listTrack: listTrack.data

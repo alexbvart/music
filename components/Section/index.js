@@ -33,31 +33,36 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                         list.map((track) => (
                             <>
                                 {
-                                    
                                     width <= 560 && !isPlayList ?
-                                    (<TrackCardInline 
-                                        album={track.album} 
-                                        artist={track.artist} 
-                                        images={track.md5_image} 
-                                        key={track.id} 
-                                        name={track.title} 
-                                    />)
-                                    :
-                                    (<TrackCardBlock 
-                                        album={track.album} 
-                                        artist={track.artist} 
-                                        description={track.artist.name} 
-                                        images={track.md5_image} 
-                                        key={track.id} 
-                                        title={track.title} 
-                                    />)
+                                        (<TrackCardInline
+                                            album={track.album}
+                                            artist={track.artist}
+                                            images={track.md5_image}
+                                            key={track.id}
+                                            name={track.title}
+                                        />)
+                                        :
+                                        (<TrackCardBlock
+                                            album={track.album}
+                                            artist={track.artist}
+                                            description={track.artist.name}
+                                            images={track.md5_image}
+                                            key={track.id}
+                                            title={track.title}
+                                        />)
                                 }
                             </>
                         ))
                     }
-                                        {/* images={iamgesSrcSet(track)}  */}
+                    {/* images={iamgesSrcSet(track)}  */}
                 </ul>
             </section>
+
+            <style jsx>{`
+                section{
+                    scroll-snap-align: center;
+                }
+            `}</style>
 
         </>
     );
