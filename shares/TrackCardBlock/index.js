@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 import CoverImage from '../CoverImage';
 import block from './TrackCardBlock.module.css'
 
-const TrackCardBlock = ({ title, images, album, artist, type ,id}) => {
-console.log(type);
-    const [imgUrl, setImgUrl] = useState(`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`)
+import useImageUrl from '../../hooks/useImageUrl';
 
-    useEffect(() => {
-        if (type==="playlist") {
-        setImgUrl(`https://cdns-images.dzcdn.net/images/playlist/${images}/500x500-000000-80-0-0.jpg`);
-        } 
-        return () => {
-            
-        }
-    }, [])
+const TrackCardBlock = ({ title, images, album, artist, type ,id}) => {
+
+    const imgUrl = useImageUrl(type,images)
 
     return (
         <>

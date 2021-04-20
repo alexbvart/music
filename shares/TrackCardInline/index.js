@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Link from 'next/link'
+
 import trackCardInline from './TrackCardInline.module.css'
-import useDurationTrack from '../../hooks/useDurationTrack'
 import CoverImage from '../CoverImage';
 import ArtistName from './ArtistName';
 
-import Link from 'next/link'
+import useDurationTrack from '../../hooks/useDurationTrack'
+import useImageUrl from '../../hooks/useImageUrl';
 
 
-const TrackCardInline = ({ images, name, artist, duration, album, type }) => {
+const TrackCardInline = ({ images, name, artist, duration, album, type ,id}) => {
 
     const durationString = useDurationTrack(duration)
-    console.log(type);
-    const [imgUrl, setImgUrl] = useState(`https://cdns-images.dzcdn.net/images/cover/${images}/500x500-000000-80-0-0.jpg`)
+    const imgUrl = useImageUrl(type,images)
 
-    useEffect(() => {
-        if (type==="playlist") {
-        setImgUrl(`https://cdns-images.dzcdn.net/images/playlist/${images}/500x500-000000-80-0-0.jpg`);
-        } 
-        return () => {
-            
-        }
-    }, [])
     return (
         <>
             <div className={trackCardInline.track}>
@@ -28,7 +21,6 @@ const TrackCardInline = ({ images, name, artist, duration, album, type }) => {
                     Ø
                 </div>
                 <div className={trackCardInline.track_info}>
-                    {/* todo probar esto y hacer un componente para cada imagen con su loading  */}
 
                     {images !== "" ?
                         <CoverImage
@@ -44,7 +36,11 @@ const TrackCardInline = ({ images, name, artist, duration, album, type }) => {
                                     <a>{name}</a>
                                 </Link>
                                 :
-                                name 
+                                <Link href={`/playlist/${id}`}>
+                                    <a>
+                                        {name}
+                                    </a>
+                                </Link>
                         }
                         <br />
                         {artist && <ArtistName artist={artist} />}
@@ -54,7 +50,7 @@ const TrackCardInline = ({ images, name, artist, duration, album, type }) => {
                 <div className={trackCardInline.album}>
                     {album &&
                         <Link href={`/album/${album.id}`}>
-                            <a>{ album.title}</a>
+                            <a>{album.title}</a>
                         </Link>
                     }
                 </div>
