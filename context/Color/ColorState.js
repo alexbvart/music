@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ColorContext from './colorContext';
+import ColorContext from './ColorContext';
 const ColorState = ({children}) => {
 
     const baseGradientInitial = `linear-gradient(341.09deg, #131213 50%, #15386C  100%)`
