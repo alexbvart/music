@@ -17,10 +17,10 @@ export default function Home({ datalist }) {
 
       <Hero></Hero>
       <SectionWrapper>
-        <Section id="Liked" list={datalist.tracks.data} title="Liked" subtitle="song" ></Section>
-        <Section id="Recently" list={datalist.tracks.data} title="Recently" subtitle="song" ></Section>
-        <Section id="Topp" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
-        <Section id="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" ></Section>
+        <Section key="Liked" list={datalist.tracks.data} title="Liked" subtitle="song" ></Section>
+        <Section key="Recently" list={datalist.tracks.data} title="Recently" subtitle="song" ></Section>
+        <Section key="Topp" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
+        <Section key="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" ></Section>
       </SectionWrapper>
       {/*           <Section list={datalist.artists.data} title="Recently" subtitle="song"></Section>
           <Section list={datalist.albums.data} title="Top" subtitle=""></Section>
@@ -29,13 +29,13 @@ export default function Home({ datalist }) {
 
   )
 }
-Home.getInitialProps = async (context) => {
 
-
-  return fetch(`https://api.deezer.com/chart/`)
+export async function getServerSideProps(context) {
+    return fetch(`https://api.deezer.com/chart/`)
     .then(res => res.json())
     .then(response => {
       const datalist = response;
-      return { datalist }
+      return { props: {datalist} }
     })
 }
+

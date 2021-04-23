@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: var(--padding-between-elements);
+    margin-right: var(--padding-between-elements);
+
+    z-index: 99999;
+}
+.search{
+    height: 40px;
+}

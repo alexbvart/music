@@ -12,7 +12,6 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
 
     const windowDimensions = useWindowDimensions();
     const { width } = windowDimensions
-    console.log(isPlayList);
 
     const typeCarrousel = isPlayList || width >= 560 ? section.carrouselhorizontal : section.carrouselvertical
 

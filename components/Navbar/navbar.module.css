@@ -70,10 +70,11 @@
         margin: 0;
         margin-bottom: 0;
     }
+    .list li:nth-last-child(2) ,
     .list li:last-child{
         display: none;
     }
-    .list li a:nth-last-child(2) {
+    .list li a:nth-last-child(3) {
     padding-right: 0px; /* * playlist */
 }
 }

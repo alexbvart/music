@@ -1,5 +1,6 @@
-import React from 'react';
+/* Components */
 import navbar from './navbar.module.css'
+/* Icons */
 import Auxona from '../../shares/icon/auxona/index'
 import Liked from '../../shares/icon/liked';
 import Recently from '../../shares/icon/Recently';
@@ -8,7 +9,13 @@ import Playlist from '../../shares/icon/Playlist';
 import Search from '../../shares/icon/Search';
 import Link from 'next/link';
 
+import useHiddenOrShow from '../../hooks/useHiddenOrShow';
+import SearchBar from '../Header/SearchBar/SearchBar';
+
 const Navbar = () => {
+
+    const [showSearchBar, setShowSearchBar] = useHiddenOrShow();
+
     return (
         <>
             <nav className={navbar.nav_bar}>
@@ -52,11 +59,17 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className={navbar.item}> 
-                        <a>
+                    <li className={navbar.item}>
+                        <a onClick={() => setShowSearchBar(!showSearchBar)}>
                             <Search /> Search
                         </a>
                     </li>
+                    <li className={navbar.item}>
+                        <a>
+                            {showSearchBar && <SearchBar />}
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
         </>

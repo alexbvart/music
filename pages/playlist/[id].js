@@ -47,16 +47,16 @@ const Playlist = ({ datalist }) => {
 }
 export default Playlist;
 
-Playlist.getInitialProps = async (context) => {
 
-    const { query } = context;
-    const { id } = query;
+export async function getServerSideProps(context) {
+    const { params } = context;
+    const { id } = params;
     const type = "playlist"
 
     return fetch(`https://api.deezer.com/${type}/${id}`)
         .then(res => res.json())
         .then(response => {
             const datalist = response;
-            return { datalist }
+            return { props: {datalist} }
         })
 }

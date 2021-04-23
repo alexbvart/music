@@ -144,6 +144,12 @@ a {
   font-weight: var(--description-weight-semi-bold);
 }
 
+.average-font-size-semi-bold:hover,
+.description-font-size-medium:hover {
+  color: #fff;
+}
+
+
 
 @media screen and (max-width: 560px) {
 

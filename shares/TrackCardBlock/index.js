@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 import CoverImage from '../CoverImage';
 import block from './TrackCardBlock.module.css'
 
+
 import useImageUrl from '../../hooks/useImageUrl';
+import Play from '../icon/Play';
 
-const TrackCardBlock = ({ title, images, album, artist, type ,id}) => {
+const TrackCardBlock = ({ title, images, album, artist, type, id }) => {
 
-    const imgUrl = useImageUrl(type,images)
+    const imgUrl = useImageUrl(type, images)
+
+    const [ShowPlay, setShowPlay] = useState(false)
 
     return (
         <>
-            <article className={block.card}>
-                {/* <img src={img} alt={title} /> */}
-                <CoverImage
-                    width={190}
-                    height={190}
-                    alt={title}
-                    src={imgUrl}
-                />
+            <article className={block.card}
+                onMouseEnter={() => setShowPlay(true)}
+                onMouseLeave={() => setShowPlay(false)}
+            >
+                
+                <div className={block.imageWrapper}>
+                    <CoverImage
+                        width={190}
+                        height={190}
+                        alt={title}
+                        src={imgUrl}
+                    />
+                    {ShowPlay && <Play />}
+                </div>
+
+
+
                 {
                     (album) ?
                         <Link href={`/album/${album.id}`}>

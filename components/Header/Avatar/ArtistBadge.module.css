@@ -2,12 +2,11 @@
     display: flex;
     justify-content: baseline;
     align-items: center;
-    padding: 2px;
-    margin-bottom: 4px;
+    margin-left: var(--padding-between-elements);
 
 }
 .badge .badge_cover_image{
-    margin-right: 0px;
+    margin-right: -16px;
 }
 .badge_text{
     transition: all .5s ease-out;

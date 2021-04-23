@@ -44,16 +44,14 @@ const Album = ({ datalist }) => {
 }
 export default Album;
 
-Album.getInitialProps = async (context) => {
-
-    const { query } = context;
-    const { id } = query;
+export async function getServerSideProps(context) {
+    const { params, res } = context;
+    const { id } = params;
     const type = "album"
-
     return fetch(`https://api.deezer.com/${type}/${id}`)
-        .then(res => res.json())
-        .then(response => {
-            const datalist = response;
-            return { datalist }
-        })
+    .then(res => res.json())
+    .then(response => {
+        const datalist = response;
+        return { props: {datalist} }
+    })
 }

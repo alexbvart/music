@@ -6,25 +6,25 @@ import Head from 'next/head'
 
 import useColorBase from '../../hooks/useColorBase'
 
-const Artist = ({  artist, listTrack}) => {
+const Artist = ({ artist, listTrack }) => {
 
     console.log(artist);
     console.log(listTrack);
 
-    const [colorBase,baseGradient] = useColorBase(artist) 
-console.log(baseGradient
+    const [colorBase, baseGradient] = useColorBase(artist)
+    console.log(baseGradient
     );
     return (
         <>
             <Head>
                 <title> {artist.name}  </title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="theme-color" content={colorBase} /> 
+                <meta name="theme-color" content={colorBase} />
             </Head>
 
             <main>
                 <HeroAllPages data={artist} />
-                <CarrouselVertical list={listTrack} /> 
+                <CarrouselVertical list={listTrack} />
             </main>
 
             <style global jsx>{`
@@ -33,23 +33,24 @@ console.log(baseGradient
                     ;
                 }
             `}</style>
-            
+
             <style global jsx>{`
                 @media screen and (max-width: 560px) {
                         main{
                             z-index:99999;
                         }
                 }
-            `}</style> 
+            `}</style>
         </>
     );
 }
 export default Artist;
 
-Artist.getInitialProps = async (context) => {
 
-    const { query } = context;
-    const { id } = query;
+export async function getServerSideProps(context) {
+
+    const { params } = context;
+    const { id } = params;
     const type = "artist"
     const limit = 11;
 
@@ -61,8 +62,9 @@ Artist.getInitialProps = async (context) => {
 
 
     return {
-        artist: artist,
-        listTrack: listTrack.data
+        props: {
+            artist: artist,
+            listTrack: listTrack.data
+        }
     };
-
 }
