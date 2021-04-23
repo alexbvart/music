@@ -23,7 +23,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 999999999;
+    z-index: 99;
     margin-bottom: var(--padding-between-sections);
     margin-left: var(--padding-between-elements);
 }

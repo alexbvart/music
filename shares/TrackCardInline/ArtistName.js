@@ -15,6 +15,12 @@ const ArtistName = ({ artist }) => {
                         </span>
                     ))
                 }
+                <style jsx>{`
+                    span a{
+                        margin-right: 12px;
+                    }
+                `}</style>
+
             </>
         );
     }

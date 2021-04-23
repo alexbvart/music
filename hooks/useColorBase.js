@@ -1,14 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import {useContext, useEffect} from 'react';
 import { usePalette } from 'react-palette'
+
+
+import ColorContext from '../context/Color/colorContext';
 
 const useColorBase = (datalist) => {
 
     /* console.log("entradata ", datalist) */;
     const { data, loading, error } = usePalette(datalist.picture_medium||datalist.cover_medium)
     
-    const baseGradientInitial = `linear-gradient(341.09deg, #131213 50%, #15386C  100%)`
-    const [baseGradient, setBaseGradient] = useState(baseGradientInitial)
-    const [colorBase, setColorBase] = useState("#15386C")
+    const { baseGradient, setBaseGradient, colorBase, setColorBase} = useContext(ColorContext)
 
     useEffect(() => {
         if (!loading && error === undefined) {;
