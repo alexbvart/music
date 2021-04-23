@@ -1,14 +1,15 @@
 import {useContext, useEffect} from 'react';
 import { usePalette } from 'react-palette'
+import ColorContext from '../context/Color/ColorContext';
 
 
-import ColorContext from '../context/Color/colorContext';
+
 
 const useColorBase = (datalist) => {
 
     /* console.log("entradata ", datalist) */;
     const { data, loading, error } = usePalette(datalist.picture_medium||datalist.cover_medium)
-    
+
     const { baseGradient, setBaseGradient, colorBase, setColorBase} = useContext(ColorContext)
 
     useEffect(() => {
