@@ -1,0 +1,12 @@
+.artist{
+
+}
+
+
+@media screen and (max-width: 860px) {
+    .artist{
+        display: none;
+                        justify-content: flex-start;
+                        background-color: red;
+    }
+}

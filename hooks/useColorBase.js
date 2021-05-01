@@ -1,15 +1,21 @@
 import {useContext, useEffect} from 'react';
 import { usePalette } from 'react-palette'
 import ColorContext from '../context/Color/ColorContext';
+import useImageUrl from './useImageUrl';
 
 
 
 
-const useColorBase = (datalist) => {
+const useColorBase = (md5_image,type) => {
 
-    /* console.log("entradata ", datalist) */;
-    const { data, loading, error } = usePalette(datalist.picture_medium||datalist.cover_medium)
+    var imgUrl = useImageUrl(type,md5_image)
 
+    /* const { data, loading, error } = usePalette(datalist.picture_medium||datalist.cover_medium) */
+    
+    if (type==="artist") {
+        imgUrl = md5_image
+    }
+    const { data, loading, error } = usePalette(imgUrl)
     const { baseGradient, setBaseGradient, colorBase, setColorBase} = useContext(ColorContext)
 
     useEffect(() => {

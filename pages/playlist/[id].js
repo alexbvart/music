@@ -9,7 +9,8 @@ const Playlist = ({ datalist }) => {
 
     
 
-    const [colorBase,baseGradient] = useColorBase(datalist)
+    const [colorBase,baseGradient] = useColorBase(datalist.md5_image,datalist.type)
+
 
 
 

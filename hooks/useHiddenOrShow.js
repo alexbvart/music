@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
+import SearchBarContext from '../context/SearchBar/SearchBarContext';
 
-function useHiddenOrShow() {
+function useHiddenOrShow(){
 
-    const [showSearchBar, setShowSearchBar] = useState(false)
+    const { showSearchBar, setShowSearchBar} = useContext(SearchBarContext)
+
     useEffect(() => {
         console.log(showSearchBar);
     }, [showSearchBar])

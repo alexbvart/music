@@ -1,11 +1,14 @@
 import Head from 'next/head'
 
+
 import Hero from '../components/Hero'
 import Section from '../components/Section'
 import SectionWrapper from '../components/Section/SectionWrapper'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home({ datalist }) {
+
   return (
 
     <>
@@ -22,9 +25,13 @@ export default function Home({ datalist }) {
         <Section key="Topp" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
         <Section key="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" ></Section>
       </SectionWrapper>
-      {/*           <Section list={datalist.artists.data} title="Recently" subtitle="song"></Section>
-          <Section list={datalist.albums.data} title="Top" subtitle=""></Section>
-          <Section list={datalist.playlists.data} title="Playlist" subtitle="list" isPlayList={true}></Section> */}
+
+          
+          <style global jsx>{`
+                :root{
+                    --z-nav: 100;
+                }
+          `}</style>
     </>
 
   )

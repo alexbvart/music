@@ -1,7 +1,8 @@
 .nav_bar {
     width: 230px;
-    
     height: 100%;
+    z-index: var(--z-nav);
+
 
     position: fixed;
     top: 0;
@@ -39,7 +40,6 @@
         display: none;
     }
 
-
     .nav_bar {
         background: rgba(0, 0, 0, 0);
         width: calc(100% - 48px);
@@ -52,7 +52,7 @@
         left: 0;
         right: 0;
 
-        z-index: 100;
+        
     }
     .list {
         height: 100%;
@@ -70,13 +70,13 @@
         margin: 0;
         margin-bottom: 0;
     }
-    .list li:nth-last-child(2) ,
+    .list li:nth-last-child(1) ,
     .list li:last-child{
         display: none;
     }
-    .list li a:nth-last-child(3) {
+    .list li a:nth-last-child(2) {
     padding-right: 0px; /* * playlist */
-}
+    }
 }
 @media screen and (max-width: 460px) {
     .item svg{

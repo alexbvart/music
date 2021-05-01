@@ -26,6 +26,7 @@ const CoverImage = ({
                     height: ${height}px;
                     border-radius: 12px;
                 }
+
             `}</style>
         </>
     );

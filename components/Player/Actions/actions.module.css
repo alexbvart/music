@@ -1,0 +1,25 @@
+.actions{
+
+/*     background-color: greenyellow; */
+    box-sizing: border-box;
+    grid-area: actions;
+
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+
+}
+/* * si componente esta minimizado */
+/* @media screen and (max-width: 860px) {
+    .actions{
+        box-sizing: border-box;
+
+        background-color: blue;
+    }
+    .actions SVG{
+        display: none;
+    }
+    .actions SVG:nth-child(2){
+        display: block;
+    }
+} */

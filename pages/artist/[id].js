@@ -11,7 +11,8 @@ const Artist = ({ artist, listTrack }) => {
     console.log(artist);
     console.log(listTrack);
 
-    const [colorBase, baseGradient] = useColorBase(artist)
+    const [colorBase,baseGradient] = useColorBase(artist.picture_medium,artist.type)
+
     console.log(baseGradient
     );
     return (

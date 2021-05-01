@@ -1,6 +1,7 @@
+
 import * as React from "react"
 
-function Pause() {
+function PlayOnly() {
     return (
         <svg
             width="40px"
@@ -10,11 +11,11 @@ function Pause() {
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
-                d="M21 14a1 1 0 011-1h.333a1 1 0 011 1v12a1 1 0 01-1 1H22a1 1 0 01-1-1V14zM12 14a1 1 0 011-1h.333a1 1 0 011 1v12a1 1 0 01-1 1H13a1 1 0 01-1-1V14z"
-                fill="#fff"
+                d="M11.76 9.298a1 1 0 00-1.514.858v20.467a1 1 0 001.514.858l17.057-10.234a1 1 0 000-1.715L11.76 9.298z"
+                fill="#F3F3F3"
             />
         </svg>
     )
 }
 
-export default Pause
+export default PlayOnly

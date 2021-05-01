@@ -2,16 +2,15 @@ import Avatar from './Avatar'
 import SearchBar from './SearchBar/SearchBar'
 import header from './Header.module.css'
 import Search from '../../shares/icon/Search'
+
 import useHiddenOrShow from '../../hooks/useHiddenOrShow'
 import useWindowDimension from '../../hooks/useWindowDimension'
-import ArrowDown from '../../shares/icon/arrowDown'
+import Close from '../../shares/icon/Close'
 
 
 function Header() {
 
-    const [showSearchBar, setShowSearchBar] = useHiddenOrShow();
-
-
+    const [showSearchBar, setShowSearchBar] = useHiddenOrShow(); 
 
     const windowDimensions = useWindowDimension();
     const { width } = windowDimensions
@@ -21,12 +20,11 @@ function Header() {
     return (
         <header className={header.header}>
 
-
             {
                 (showSearchBar) ?
                 <>
                     <div onClick={() => setShowSearchBar(!showSearchBar)} className={header.search} >
-                        <ArrowDown></ArrowDown>
+                        <Close />
                     </div>
                     <SearchBar />
                 </>

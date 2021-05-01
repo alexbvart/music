@@ -7,8 +7,8 @@ import Head from 'next/head'
 import useColorBase from '../../hooks/useColorBase'
 
 const Album = ({ datalist }) => {
-
-    const [colorBase,baseGradient] = useColorBase(datalist)
+    
+    const [colorBase,baseGradient] = useColorBase(datalist.md5_image,datalist.type)
 
     return (
         <>

@@ -49,7 +49,7 @@
   --icon-wrapper: 40px;
   --nav-bar-width: 230px;
   --main-width: calc(100vw - var(--nav-bar-width));
-
+  --z-nav: 1;
 
   /*  * PADDING */
 
@@ -156,7 +156,9 @@ a {
 
   :root{
     --wrapper-margin: 24px;
-    --main-width: 100vw
+    --main-width: 100vw;
+    --z-nav: -1;
+
   }
 
 }

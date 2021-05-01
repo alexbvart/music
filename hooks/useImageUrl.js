@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function useImageUrl(type,images) {
+function useImageUrl(type="",images) {
 
     
     /* console.log(type); */

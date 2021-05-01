@@ -6,6 +6,9 @@
   grid-template-columns: var(--nav-bar-width) 1fr;
   grid-template-areas: "navbar main";
 }
+.navbar{
+  grid-area: navbar;
+}
 
 .main_section {
   grid-area: main;

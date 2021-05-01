@@ -1,5 +1,7 @@
 /* Components */
+import Link from 'next/link';
 import navbar from './navbar.module.css'
+
 /* Icons */
 import Auxona from '../../shares/icon/auxona/index'
 import Liked from '../../shares/icon/liked';
@@ -7,25 +9,26 @@ import Recently from '../../shares/icon/Recently';
 import Top from '../../shares/icon/Top';
 import Playlist from '../../shares/icon/Playlist';
 import Search from '../../shares/icon/Search';
-import Link from 'next/link';
 
 import useHiddenOrShow from '../../hooks/useHiddenOrShow';
-import SearchBar from '../Header/SearchBar/SearchBar';
+
+
 
 const Navbar = () => {
 
-    const [showSearchBar, setShowSearchBar] = useHiddenOrShow();
+    const [showSearchBar, setShowSearchBar] = useHiddenOrShow(); 
+
 
     return (
         <>
             <nav className={navbar.nav_bar}>
-                <div className={navbar.logo}>
+                <header className={navbar.logo}>
                     <Link href="/ ">
                         <a>
                             <Auxona></Auxona>
                         </a>
                     </Link>
-                </div>
+                </header>
                 <ul className={navbar.list}>
                     <li className={navbar.item}>
                         <Link href="/#Liked">
@@ -58,18 +61,11 @@ const Navbar = () => {
                             </a>
                         </Link>
                     </li>
-
                     <li className={navbar.item}>
                         <a onClick={() => setShowSearchBar(!showSearchBar)}>
                             <Search /> Search
                         </a>
                     </li>
-                    <li className={navbar.item}>
-                        <a>
-                            {showSearchBar && <SearchBar />}
-                        </a>
-                    </li>
-
                 </ul>
             </nav>
         </>
