@@ -4,6 +4,7 @@ import Link from 'next/link'
 import trackCardInline from './TrackCardInline.module.css'
 import CoverImage from '../CoverImage';
 import ArtistName from './ArtistName';
+import PlayProvider from './PlayProvider';
 
 import useDurationTrack from '../../hooks/useDurationTrack'
 import useImageUrl from '../../hooks/useImageUrl';
@@ -17,8 +18,8 @@ const TrackCardInline = ({ images, name, artist, duration, album, type ,id}) => 
     return (
         <>
             <div className={trackCardInline.track}>
-                <div className={trackCardInline.action}>
-                    Ø
+                <div className={trackCardInline.action} >
+                    <PlayProvider images={imgUrl} name={name} artist={artist} duration={duration} id={id}/>
                 </div>
                 <div className={trackCardInline.track_info}>
 

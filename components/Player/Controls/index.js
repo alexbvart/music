@@ -6,12 +6,18 @@ import controls from './controls.module.css'
 
 const Controls = () => {
 
-    const counter = 100;
-    const duration = 166
-    const counterString = useDurationTrack(counter)
+
+
+    const {duration, expand } = useContext(TrackContext)
+    const [counterValue, setCounterValue] = useState(0)
+    
+    const counterString = useDurationTrack(counterValue)
     const durationString = useDurationTrack(duration)
 
-    const { expand } = useContext(TrackContext)
+    const handleChange=(event)=>{
+        setCounterValue(event.target.value)
+    }
+
 
     return (
         <>
@@ -30,6 +36,7 @@ const Controls = () => {
                         max={duration} 
                         aria-valuemin="0" 
                         aria-valuemax={duration}
+                        onChange={(event)=>{handleChange(event)}}
                     />
             </div>
 

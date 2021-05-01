@@ -16,11 +16,9 @@ import player from './player.module.css'
 
 const Player = () => {
 
-    const images = "aa6aa7ac356ad9d6c578cccd1a62c394"
+    const {images,name} = useContext(TrackContext)
     const type = "track"
-    const name = "All Night (feat. Ally Brooke)"
 
-    const imgUrl = useImageUrl(type, images)
     const [colorBase,baseGradient] = useColorBase(images,type)
     console.log("track: ", baseGradient);
 
@@ -52,19 +50,14 @@ const Player = () => {
                 <div className={player.coverImage} >
                     <CoverImage
                         alt={name}
-                        src={imgUrl}
+                        src={images}
                         width={imgSize}
                         height={imgSize}
                     />
                 </div>
-                <Info>
-                </Info>
-                <Controls>
-
-                </Controls>
-                <Actions>
-
-                </Actions>
+                <Controls />
+                <Info />
+                <Actions/>
             </aside>
 
             { expand ? 

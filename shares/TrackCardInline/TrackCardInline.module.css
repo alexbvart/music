@@ -2,7 +2,9 @@
     width: calc(100% - var(--nav-bar-width));
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 24px 2fr 1fr auto;
+    grid-template-areas: "action info ";
+
+    grid-template-columns: 32px 2fr 1fr auto;
     grid-gap: calc(var(--padding-between-elements) * 2);
     justify-content: baseline;
     align-items: center;
@@ -13,8 +15,12 @@
 .track:hover{
     background-image: var(--hover-gradient);
 }
+.action{
+    grid-area: action;
+}
 
 .track_info{
+    grid-area: info;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 64px 1fr;
@@ -54,10 +60,11 @@
 
     .track{
         width: 100%;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "info action";
         
     }
-    .action,
+
     .album,
     .duration{
         display: none;

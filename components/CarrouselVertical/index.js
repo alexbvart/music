@@ -23,6 +23,7 @@ const CarrouselVertical = ({ title="", subtitle = "", list=[] }) => {
                         list.map((track) => (
                             <TrackCardInline 
                                 key={track.id} 
+                                id={track.id} 
                                 album={track.album}
                                 artist={track.contributors||track.artist} 
                                 duration={track.duration}

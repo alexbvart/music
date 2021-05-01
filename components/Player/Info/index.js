@@ -8,28 +8,20 @@ import info from './info.module.css'
 
 const Info = () => {
 
-    const { expand } = useContext(TrackContext)
+    const {name,artist, expand } = useContext(TrackContext)
 
 
-    const name = "All Night (feat. Ally Brooke)"
-    const artist = {
-        "id": 169361,
-        "name": "Afrojack",
-        "link": "https://www.deezer.com/artist/169361",
-        "tracklist": "https://api.deezer.com/artist/169361/top?limit=50",
-        "type": "artist"
-    }
 
     return (
         <>
             <div className="average-font-size-medium info" >
                 {name && name}
                 <br />
-                {artist &&
+                
                     <div className="artist">
-                        <ArtistName artist={artist} />
+                        {artist && <ArtistName artist={artist} />}
                     </div>
-                }
+                
             </div>
 
             {expand ?
