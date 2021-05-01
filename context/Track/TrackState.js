@@ -19,6 +19,10 @@ const TrackState = ({children}) => {
     const [duration, setDuration] = useState(null)
     const [id, setId] = useState("")
 
+    const [darkMuted , setDarkMuted ] = useState("#2b343e")
+    const [lightVibrant, setLightVibrant] = useState("#f0e478")
+
+
             /* console.log(id,name,duration,artist,images); */
     return ( 
         <TrackContext.Provider
@@ -29,6 +33,9 @@ const TrackState = ({children}) => {
                 name, setName,
                 duration, setDuration,
                 id, setId,
+
+                darkMuted , setDarkMuted,
+                lightVibrant, setLightVibrant,
             }}
         >
             {children}

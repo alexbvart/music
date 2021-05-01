@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import TrackContext from '../../context/Track/TrackContext';
 
-import useColorBase from '../../hooks/useColorBase';
-import useImageUrl from '../../hooks/useImageUrl';
 
 import CoverImage from '../../shares/CoverImage';
 import Actions from './Actions';
@@ -13,15 +11,14 @@ import Info from './info';
 import ArrowDown from '../../shares/icon/arrowDown'
 
 import player from './player.module.css'
+import useColorTrack from '../../hooks/useColorTrack';
 
 const Player = () => {
 
     const {images,name} = useContext(TrackContext)
-    const type = "track"
 
-    const [colorBase,baseGradient] = useColorBase(images,type)
-    console.log("track: ", baseGradient);
 
+    const [darkMuted,lightVibrant] = useColorTrack(images)
 
 
     const {expand, setExpand} = useContext(TrackContext)
@@ -66,7 +63,8 @@ const Player = () => {
                     <style jsx>{`
                         aside {
                             height: 100vh;
-                            background-image: ${baseGradient}
+                            background-image: linear-gradient(341.09deg, #131213 50%, ${darkMuted}  100%)
+                            
                         }
                     `}</style>
                 ):
@@ -74,9 +72,7 @@ const Player = () => {
                     <style jsx>{`
                         aside {
                             height: 112px;
-
                             background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.6) 0%, rgba(23, 23, 23, 0.6) 100%);   
-
                         }
                     `}</style>
                     
@@ -91,3 +87,4 @@ const Player = () => {
     );
 }
 export default Player;
+{/*  */}

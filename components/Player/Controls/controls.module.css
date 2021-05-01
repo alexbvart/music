@@ -35,8 +35,8 @@
 .slider_track input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
 
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     border-radius: 12px;
     background: var(--white-color-des-active);
 
@@ -72,7 +72,7 @@
 
   .slider_track   input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 8px;
+    height: 4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     background: #925e22;

@@ -36,6 +36,7 @@ const Controls = () => {
                         max={duration} 
                         aria-valuemin="0" 
                         aria-valuemax={duration}
+                        value={counterValue}
                         onChange={(event)=>{handleChange(event)}}
                     />
             </div>
