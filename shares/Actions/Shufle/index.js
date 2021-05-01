@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Shufle from '../../icon/Shufle'
 import ShufleOn from '../../icon/Shufle/active'
 
-const ShufleButton = () => {
+const ShufleButton = ({fill="#DEE1EC"}) => {
 
     const [shufle, setShufle] = useState(false)
 
@@ -11,7 +11,7 @@ const ShufleButton = () => {
         <div onClick={() => {setShufle(!shufle)}}>
             {shufle
                 ? <ShufleOn />
-                : <Shufle />
+                : <Shufle fill={fill} />
             }
         </div>
     );

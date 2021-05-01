@@ -29,7 +29,9 @@
 
   --white-color-active: #E2DEE2;
   --white-color-des-active: rgba(222, 225, 236, 0.7);
-  ;
+  --lightVibrant: rgba(222, 225, 236, 0.7);
+  --darkMuted: rgba(2, 2, 2, 0.7);
+  
 
   --gray: #131213;
 

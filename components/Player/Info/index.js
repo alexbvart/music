@@ -8,7 +8,7 @@ import info from './info.module.css'
 
 const Info = () => {
 
-    const {name,artist, expand } = useContext(TrackContext)
+    const {name,artist, expand , lightVibrant} = useContext(TrackContext)
 
 
 
@@ -28,9 +28,9 @@ const Info = () => {
                 <style jsx>{`
                         .info{
                             grid-area: info;
+                            color: ${lightVibrant}
                         }
                         .artist{
-                            background: red;
                             display: block;
                         }
                 `}</style>
@@ -43,6 +43,8 @@ const Info = () => {
                         flex-direction: column;
                         align-items:flex-start;
                         justify-content: center;
+
+                        color: ${lightVibrant}
                     }
 
                     @media screen and (max-width: 860px) {

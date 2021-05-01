@@ -8,7 +8,7 @@ const Controls = () => {
 
 
 
-    const {duration, expand } = useContext(TrackContext)
+    const {duration, expand,lightVibrant } = useContext(TrackContext)
     const [counterValue, setCounterValue] = useState(0)
     
     const counterString = useDurationTrack(counterValue)
@@ -50,9 +50,11 @@ const Controls = () => {
                 <style jsx>{`
                     .controls{
                         grid-area: controls;
+                        color: ${lightVibrant};
+
                     }
                     .timing{
-                            background: red;
+                            margin-top; 4px;
                             display: block;
                         }
                 `}</style>
@@ -60,6 +62,8 @@ const Controls = () => {
                 :
                 <style jsx>{`
                     .controls{
+                            color: ${lightVibrant};
+
                         grid-area: controls;
                         display: flex;
                         flex-direction: column;

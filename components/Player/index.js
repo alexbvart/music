@@ -57,6 +57,7 @@ const Player = () => {
                 <Actions/>
             </aside>
 
+
             { expand ? 
             
                 (

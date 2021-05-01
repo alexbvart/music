@@ -1,6 +1,6 @@
 import * as React from "react"
 
-function Pause() {
+function Pause({fill="#fff"}) {
     return (
         <svg
             width="40px"
@@ -11,7 +11,7 @@ function Pause() {
         >
             <path
                 d="M21 14a1 1 0 011-1h.333a1 1 0 011 1v12a1 1 0 01-1 1H22a1 1 0 01-1-1V14zM12 14a1 1 0 011-1h.333a1 1 0 011 1v12a1 1 0 01-1 1H13a1 1 0 01-1-1V14z"
-                fill="#fff"
+                fill={fill}
             />
         </svg>
     )

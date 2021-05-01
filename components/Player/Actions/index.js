@@ -15,26 +15,27 @@ import SkipPrevious from '../../../shares/icon/SkipPrevious';
 import action from './actions.module.css'
 const Actions = () => {
 
-    const { expand } = useContext(TrackContext)
+    const { expand,lightVibrant } = useContext(TrackContext)
 
 
     return ( 
         <>
         <article className={`actions ${action.actions}`}>
             
-            <div><SkipPrevious /></div> 
-            <PlayPause />
-            <div><SkipNext /></div>
-            <LoopButton />
-            <ShufleButton />
-            <FavoriteButton />
-
+            <div><SkipPrevious fill={lightVibrant}  /></div> 
+            <PlayPause fill={lightVibrant}  />
+            <div><SkipNext fill={lightVibrant} /></div>
+            <LoopButton fill={lightVibrant} />
+            <ShufleButton fill={lightVibrant} />
+            <FavoriteButton fill={lightVibrant} />
         </article>
         
         
         {expand ?
                 <style jsx>{`
                     .actions{ 
+                        color: ${lightVibrant};
+
                     }
                     div{
                         outline: none;
@@ -50,6 +51,8 @@ const Actions = () => {
                 <style jsx>{`
                     /* * si componente esta minimizado */
                     .actions{
+                        color: ${lightVibrant};
+
                     }
 
                     div{

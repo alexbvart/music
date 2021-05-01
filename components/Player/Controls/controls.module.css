@@ -38,7 +38,8 @@
     height: 12px;
     width: 12px;
     border-radius: 12px;
-    background: var(--white-color-des-active);
+    background: var(--lightVibrant);
+
 
     cursor: pointer;
     margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
@@ -75,7 +76,7 @@
     height: 4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #925e22;
+    background: var(--lightVibrant);
     border-radius: 12px;
   }
   
@@ -88,7 +89,7 @@
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
+    background: var(--lightVibrant);
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
@@ -103,20 +104,24 @@
     color: transparent;
   }
   .slider_track   input[type=range]::-ms-fill-lower {
-    background: #2a6495;
+    background: var(--lightVibrant);
+
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
   .slider_track   input[type=range]:focus::-ms-fill-lower {
-    background: #3071a9;
+    background: var(--lightVibrant);
+
   }
   .slider_track  input[type=range]::-ms-fill-upper {
-    background: #3071a9;
+    background: var(--lightVibrant);
+
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
   .slider_track   input[type=range]:focus::-ms-fill-upper {
-    background: #367ebd;
+    background: var(--lightVibrant);
+
   }

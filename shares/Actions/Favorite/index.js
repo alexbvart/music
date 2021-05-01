@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Favorite from '../../icon/Favorite'
 import FavoriteActive from '../../icon/Favorite/active'
 
-const FavoriteButton = () => {
+const FavoriteButton = ({fill="#DEE1EC"}) => {
 
     const [favorite, setFavorite] = useState(false)
 
@@ -11,7 +11,7 @@ const FavoriteButton = () => {
         <div onClick={() => {setFavorite(!favorite)}}>
             {favorite
                 ? <FavoriteActive />
-                : <Favorite />
+                : <Favorite fill={fill} />
             }
         </div>
     );

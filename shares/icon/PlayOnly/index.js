@@ -1,7 +1,7 @@
 
 import * as React from "react"
 
-function PlayOnly() {
+function PlayOnly({fill="#fff"}) {
     return (
         <svg
             width="40px"
@@ -12,7 +12,7 @@ function PlayOnly() {
         >
             <path
                 d="M11.76 9.298a1 1 0 00-1.514.858v20.467a1 1 0 001.514.858l17.057-10.234a1 1 0 000-1.715L11.76 9.298z"
-                fill="#F3F3F3"
+                fill={fill}
             />
         </svg>
     )

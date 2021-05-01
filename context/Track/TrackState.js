@@ -20,7 +20,7 @@ const TrackState = ({children}) => {
     const [id, setId] = useState("")
 
     const [darkMuted , setDarkMuted ] = useState("#2b343e")
-    const [lightVibrant, setLightVibrant] = useState("#f0e478")
+    const [lightVibrant, setLightVibrant] = useState("#fff")
 
 
             /* console.log(id,name,duration,artist,images); */
@@ -39,6 +39,12 @@ const TrackState = ({children}) => {
             }}
         >
             {children}
+            <style global jsx>{`
+                :root{
+                    --lightVibrant: ${lightVibrant};
+                    --darkMuted: ${darkMuted};
+                }
+            `}</style>
         </TrackContext.Provider>
     );
 }

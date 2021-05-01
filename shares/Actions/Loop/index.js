@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Loop from '../../icon/Loop'
 import LoopOn from '../../icon/Loop/active'
 
-const LoopButton = () => {
+const LoopButton = ({fill="#DEE1EC"}) => {
 
     const [loop, setLoop] = useState(false)
 
@@ -11,7 +11,7 @@ const LoopButton = () => {
         <div onClick={() => {setLoop(!loop)}}>
             {loop
                 ? <LoopOn />
-                : <Loop />
+                : <Loop fill={fill} />
             }
         </div>
     );
