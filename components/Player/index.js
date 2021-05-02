@@ -12,11 +12,15 @@ import ArrowDown from '../../shares/icon/arrowDown'
 
 import player from './player.module.css'
 import useColorTrack from '../../hooks/useColorTrack';
+import useWindowDimensions from '../../hooks/useWindowDimension';
+import CoverFigureHeader from '../../shares/CoverFigureHeader';
 
 const Player = () => {
 
     const {images,name} = useContext(TrackContext)
 
+    const windowSize = useWindowDimensions()
+    const {width} = windowSize;
 
     const [darkMuted,lightVibrant] = useColorTrack(images)
 
@@ -45,12 +49,14 @@ const Player = () => {
                     <ArrowDown />
                 </header>
                 <div className={player.coverImage} >
-                    <CoverImage
+                    { !expand ?
+                        <CoverImage
                         alt={name}
                         src={images}
                         width={imgSize}
                         height={imgSize}
                     />
+                    : <CoverFigureHeader images={images} />}
                 </div>
                 <Controls />
                 <Info />
@@ -63,8 +69,14 @@ const Player = () => {
                 (
                     <style jsx>{`
                         aside {
+                            max-width: 560px;
                             height: 100vh;
-                            background-image: linear-gradient(341.09deg, #131213 50%, ${darkMuted}  100%)
+                            background-image: linear-gradient(341.09deg, #131213 50%, ${darkMuted}  100%);
+
+                            right: 0;
+                            margin-left: auto;
+                            
+                            transition: all 0.3s ease-in 0.1s;
                             
                         }
                     `}</style>
@@ -74,6 +86,7 @@ const Player = () => {
                         aside {
                             height: 112px;
                             background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.6) 0%, rgba(23, 23, 23, 0.6) 100%);   
+                            transition: all 0.2s ease-in;
                         }
                     `}</style>
                     

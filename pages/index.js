@@ -18,20 +18,19 @@ export default function Home({ datalist }) {
         <meta name="theme-color" content="#000000" />
       </Head>
 
-      <Hero></Hero>
+      <Hero key="hero" />
       <SectionWrapper>
         <Section key="Liked" list={datalist.tracks.data} title="Liked" subtitle="song" ></Section>
         <Section key="Recently" list={datalist.tracks.data} title="Recently" subtitle="song" ></Section>
         <Section key="Topp" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
         <Section key="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" ></Section>
       </SectionWrapper>
-
-          
-          <style global jsx>{`
-                :root{
-                    --z-nav: 100;
-                }
-          `}</style>
+  
+        <style global jsx>{`
+              :root{
+                  --z-nav: 100;
+              }
+        `}</style>
     </>
 
   )
