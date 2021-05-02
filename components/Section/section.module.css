@@ -7,13 +7,19 @@
 
 .carrouselvertical {
     width: 100%;
+    max-width: var(--main-width);
+
+/*     background-color: red; */
     display: grid;
     grid-gap: calc(var(--padding-between-elements) * 0);
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .carrouselhorizontal {
     display: grid;
-    width: 100%;
+    width: var(--main-width);
+/*     background-color:aqua ; */
     /* width: var(--main-width); */
 
     grid-gap: calc(var(--padding-between-elements) * 1);

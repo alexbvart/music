@@ -3,19 +3,21 @@ import TrackContext from './TrackContext';
 
 const TrackState = ({children}) => {
 
+    const initialImage ="https://cdns-images.dzcdn.net/images/cover/8e75f7f8b923eb433153a26a02071dba/500x500-000000-80-0-0.jpg"
+    const artistinit = [{
+            "id": 169361,
+            "name": "alexbvart",
+            "link": "https://www.deezer.com/artist/169361",
+            "tracklist": "https://api.deezer.com/artist/169361/top?limit=50",
+            "type": "artist"
+        }]
+
+
     const [expand, setExpand] = useState(false)
 
-    const [images, setImages] = useState("https://cdns-images.dzcdn.net/images/cover/8e75f7f8b923eb433153a26a02071dba/500x500-000000-80-0-0.jpg")
-    
-    const artistinit = [{
-        "id": 169361,
-        "name": "Afrojack",
-        "link": "https://www.deezer.com/artist/169361",
-        "tracklist": "https://api.deezer.com/artist/169361/top?limit=50",
-        "type": "artist"
-    }]
+    const [images, setImages] = useState(initialImage)
     const [artist, setArtist] = useState(artistinit)
-    const [name, setName] = useState("")
+    const [name, setName] = useState("Auxona")
     const [duration, setDuration] = useState(null)
     const [id, setId] = useState("")
 

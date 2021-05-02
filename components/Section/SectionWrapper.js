@@ -16,9 +16,7 @@ const SectionWrapper = ({ children }) => {
     return (
         <>
                 <div className={typeCarrousel} >
-                    {
-                        children
-                    } 
+                    { children } 
                 </div>
         </>
     );

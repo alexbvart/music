@@ -11,7 +11,7 @@
 
 .carrouselhorizontal {
     display: grid;
-    width: 100%;
+    width: var(--main-width);
     height: auto;
     margin-bottom: calc(var(--padding-between-sections) * 3);
 

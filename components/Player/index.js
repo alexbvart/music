@@ -6,7 +6,7 @@ import TrackContext from '../../context/Track/TrackContext';
 import CoverImage from '../../shares/CoverImage';
 import Actions from './Actions';
 import Controls from './Controls';
-import Info from './info';
+import Info from './Info';
 
 import ArrowDown from '../../shares/icon/arrowDown'
 
@@ -63,10 +63,8 @@ const Player = () => {
                 <Actions/>
             </aside>
 
-
-            { expand ? 
-            
-                (
+            { expand              
+                ?(
                     <style jsx>{`
                         aside {
                             max-width: 560px;
@@ -80,23 +78,19 @@ const Player = () => {
                             
                         }
                     `}</style>
-                ):
-                (
+                )
+                :(
                     <style jsx>{`
                         aside {
                             height: 112px;
+                            width:100%;
                             background-image: linear-gradient(180deg, rgba(18, 18, 18, 0.6) 0%, rgba(23, 23, 23, 0.6) 100%);   
-                            transition: all 0.2s ease-in;
+                            transition: all 0.2s ease-out;
                         }
                     `}</style>
                     
-                )
-            
+                )            
             }
-
-
-            
-
         </>
     );
 }
