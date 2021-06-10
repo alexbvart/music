@@ -1,0 +1,38 @@
+.badge{
+    padding: var(--padding-between-elements);
+    border-radius: var(--border-radius);
+    width: 100%;
+    scroll-snap-align: center;
+    transition: all .3s ease-in-out .1s;
+}
+.badge:hover{
+    background-color: var(--card-background);
+
+}
+
+.badge .badge_cover_image{
+    width: 190px;
+    height: 190px;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--padding-between-sections);
+}
+.badge_text{
+    opacity: 1;
+    width: auto;
+    margin:  12px 0 ;
+    display: flex;
+    flex-direction: column;
+}
+.badge_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.badge_text span{
+    margin-top: 8px;
+}
+
+
+.badge:active,
+.badge:hover{
+    background-image: var(--hover-gradient);
+}

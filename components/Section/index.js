@@ -22,7 +22,7 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                     <div className="title-for-section">{title}</div>
                     {(subtitle !== "") ?
                         <>
-                            <span className="average-font-size-medium">10 </span> {subtitle}
+                            <span className="average-font-size-medium"> {list.length} </span> {subtitle}
                         </>
                         : <span />
                     }
@@ -49,7 +49,7 @@ const Section = ({ title, subtitle = "", isPlayList = false, list = [] }) => {
                                             artist={track.artist||track.user}
                                             images={track.md5_image}
                                             key={track.id}
-                                            title={track.title}
+                                            title={track.title }
                                             type={track.type}
                                             id={track.id}
                                         />)

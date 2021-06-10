@@ -11,6 +11,8 @@ import Play from '../icon/Play';
 const TrackCardBlock = ({ title, images, album, artist, type, id }) => {
 
     const imgUrl = useImageUrl(type, images)
+    const shortTitle = title.length >= 36 ? `${title.substring(0,36)}...` : title;
+    const shortArtist= artist.name.length >= 32 ? `${artist.name.substring(0,32)}...` : artist.name;
 
     const [ShowPlay, setShowPlay] = useState(false)
 
@@ -37,13 +39,13 @@ const TrackCardBlock = ({ title, images, album, artist, type, id }) => {
                     (album) ?
                         <Link href={`/album/${album.id}`}>
                             <a>
-                                <h3 className="average-font-size-semi-bold">{title} </h3>
+                                <h3 className="average-font-size-semi-bold">{shortTitle} </h3>
                             </a>
                         </Link>
                         :
                         <Link href={`/playlist/${id}`}>
                             <a>
-                                <h3 className="average-font-size-semi-bold">{title} </h3>
+                                <h3 className="average-font-size-semi-bold">{shortTitle} </h3>
                             </a>
                         </Link>
                 }
@@ -51,11 +53,11 @@ const TrackCardBlock = ({ title, images, album, artist, type, id }) => {
                     (album) ?
                         <Link href={`/artist/${artist.id}`}>
                             <a>
-                                <span className="description-font-size-medium">{artist.name} </span>
+                                <span className="description-font-size-medium">{shortArtist} </span>
                             </a>
                         </Link>
                         :
-                        <span className="description-font-size-medium">{artist.name} </span>
+                        <span className="description-font-size-medium">{shortArtist} </span>
                 }
                 {/*< span className="description-font-size-medium">{description} </span> */}
             </article>
@@ -63,7 +65,3 @@ const TrackCardBlock = ({ title, images, album, artist, type, id }) => {
     );
 }
 export default TrackCardBlock;
-/* small={images.cover_medium}
-medium={images.cover_big}
-big={images.cover_big}
-xl={images.cover_xl} */

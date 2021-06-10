@@ -1,27 +1,22 @@
-
 .header {
     display: flex;
     align-items: baseline;
-    /* margin-bottom: 40px; */
+    margin-bottom: 40px;
 }
 
 .carrouselvertical {
     width: 100%;
-    max-width: var(--main-width);
-
-/*     background-color: red; */
     display: grid;
     grid-gap: calc(var(--padding-between-elements) * 0);
-    overflow: hidden;
-    scroll-snap-type: x mandatory;
+    margin-bottom: 40px;
+    /*     background-color: blue; */
 }
 
 .carrouselhorizontal {
     display: grid;
     width:  calc(var(--main-width) - var(--wrapper-margin));
+    /* background-color:aqua ; */
 
-/*     background-color:aqua ; */
-    /* width: var(--main-width); */
 
     grid-gap: calc(var(--padding-between-elements) * 1);
     grid-auto-flow: column;

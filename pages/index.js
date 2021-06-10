@@ -22,7 +22,7 @@ export default function Home({ datalist }) {
       <SectionWrapper>
         <Section key="Liked" list={datalist.tracks.data} title="Liked" subtitle="song" ></Section>
         <Section key="Recently" list={datalist.tracks.data} title="Recently" subtitle="song" ></Section>
-        <Section key="Topp" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
+        <Section key="Top" list={datalist.tracks.data} title="Top" subtitle="song" ></Section>
         <Section key="Playlist" list={datalist.playlists.data} title="Playlist" subtitle="list" ></Section>
       </SectionWrapper>
   
