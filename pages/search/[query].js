@@ -1,37 +1,43 @@
 import React from 'react';
-
+import { useRouter } from 'next/router'
 
 import CarrouselVertical from '../../components/CarrouselVertical'
 import Head from 'next/head'
 import Section from '../../components/Section';
-import ArtistBadge from '../../shares/ArtistBadge';
+
 import SectionOfArtist from '../../shares/SectionOfArtist'
 
 const Search = ({ tracks,albums,playlists, artists}) => {
 
-console.log({ tracks},{albums});
+    const router = useRouter()
 
 
     return (
         <>
             <Head>
-{/*                 <title>{datalist.title} </title>
+                <title>{ router.query.query} </title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="theme-color" content={colorBase} /> */}
+{/*                  <meta name="theme-color" content={colorBase} /> */}
             </Head>
             
             <main>
+                <section className="wrapper-margin" >
+                    <h1 className="title-for-section"> Results of { router.query.query} :</h1>
+                </section>
 {/*                 <HeroAllPages data={datalist}></HeroAllPages>*/}
-                <CarrouselVertical list={tracks} title="Tracks" /> 
-                <Section key="albums" list={albums} title="Albums" subtitle="song" ></Section>
-                <Section key="playlist" list={playlists} title="Playlists" subtitle="song" ></Section>
-                <SectionOfArtist list={artists} title="Artist" subtitle=""  />
+                {tracks.length>0  && <CarrouselVertical list={tracks} title="Tracks" /> }
+                {albums.length>0  && <Section key="albums" list={albums} title="Albums" subtitle="song" />}
+                {playlists.length>0 && <Section key="playlist" list={playlists} title="Playlists" subtitle="song" />}
+                {artists.length>0 && <SectionOfArtist list={artists} title="Artist" subtitle=""  />}
 
             </main>
 
-
-            
-
+            <style jsx>{`
+                h1  {
+                    margin-top: 64px;
+                    margin-bottom: 32px
+                }
+            `}</style>
             <style global jsx>{`
                 @media screen and (max-width: 560px) {
                         main{

@@ -1,19 +1,41 @@
-
+.wrapper{
+    padding: 0;
+    margin-bottom: 3rem;
+}
 .header {
+    width: 100%;
+    max-width: calc(var(--main-width) - var(--wrapper-margin));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.header_info{
     display: flex;
     align-items: baseline;
-    /* margin-bottom: 40px; */
+/*     background: red; */
 }
-
+.header div div{
+    margin-right: 2.4rem;
+}
+.header span{
+    margin-right: 0.4rem;
+}
+.card_hidden{
+    display :none;
+}
 .carrouselvertical {
     width: 100%;
-    max-width: var(--main-width);
+    max-width: calc(var(--main-width) - var(--wrapper-margin));
 
 /*     background-color: red; */
     display: grid;
     grid-gap: calc(var(--padding-between-elements) * 0);
     overflow: hidden;
     scroll-snap-type: x mandatory;
+
+    margin-bottom: 1rem;
 }
 
 .carrouselhorizontal {
@@ -27,6 +49,9 @@
     grid-auto-flow: column;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+
+    margin-bottom: 1rem;
+
 }
 
 .carrouselhorizontal:hover {

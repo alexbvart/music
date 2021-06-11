@@ -111,7 +111,7 @@ a {
 
 .wrapper-margin{
   width: calc(100% - var(--wrapper-margin));
-  margin: auto;
+  margin: 0 auto;
 }
 .title-headers{
   font-size: var(--title-headers-font-size);

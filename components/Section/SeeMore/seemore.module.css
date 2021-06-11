@@ -1,0 +1,11 @@
+.button{
+    min-width: 220px;
+    width: 100%;
+    background: rgba(250, 244, 240, 0.05);
+    height: 3rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}

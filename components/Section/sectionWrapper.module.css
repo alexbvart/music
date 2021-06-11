@@ -3,6 +3,8 @@
     width: var(--main-width);
     height: auto;
     display: grid;
+    align-content: center;
+
     grid-gap: calc(var(--padding-between-sections) * 4);
     margin-bottom: 40px;
     margin-bottom: calc(var(--padding-between-sections) * 2);
@@ -14,6 +16,7 @@
     width: var(--main-width);
     height: auto;
     margin-bottom: calc(var(--padding-between-sections) * 3);
+    align-content: center;
 
 
     grid-gap: 0px;
