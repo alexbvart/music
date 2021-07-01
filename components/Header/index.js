@@ -6,6 +6,7 @@ import Search from '../../shares/icon/Search'
 import useHiddenOrShow from '../../hooks/useHiddenOrShow'
 import useWindowDimension from '../../hooks/useWindowDimension'
 import Close from '../../shares/icon/Close'
+import Wrapper48 from './Wrapper48/Wrapper48'
 
 
 function Header() {
@@ -24,7 +25,7 @@ function Header() {
                 (showSearchBar) ?
                 <>
                     <div onClick={() => setShowSearchBar(!showSearchBar)} className={header.search} >
-                        <Close />
+                        <Wrapper48><Close /> </Wrapper48>
                     </div>
                     <SearchBar />
                 </>

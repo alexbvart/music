@@ -21,10 +21,10 @@ const Search = ({ tracks,albums,playlists, artists}) => {
             </Head>
             
             <main>
-                <section className="wrapper-margin" >
+                <header className="wrapper-margin" >
                     <h1 className="title-for-section"> Results of { router.query.query} :</h1>
-                </section>
-{/*                 <HeroAllPages data={datalist}></HeroAllPages>*/}
+                </header>
+
                 {tracks.length>0  && <CarrouselVertical list={tracks} title="Tracks" /> }
                 {albums.length>0  && <Section key="albums" list={albums} title="Albums" subtitle="song" />}
                 {playlists.length>0 && <Section key="playlist" list={playlists} title="Playlists" subtitle="song" />}
@@ -55,14 +55,15 @@ export default Search;
 export async function getServerSideProps(context) {
     const { params } = context;
     const { query } = params;
+    const SERVER_HOST = "https://backend-musi.herokuapp.com";
 
-        const tracks = await fetch(`http://localhost:5000/v1/search/track?query=${query}`)
+        const tracks = await fetch(`${SERVER_HOST}/v1/search/track?query=${query}`)
         .then(res => res.json())
-        const albums = await fetch(`http://localhost:5000/v1/search/album?query=${query}`)
+        const albums = await fetch(`${SERVER_HOST}/v1/search/album?query=${query}`)
         .then(res => res.json())
-        const playlists = await fetch(`http://localhost:5000/v1/search/playlist?query=${query}`)
+        const playlists = await fetch(`${SERVER_HOST}/v1/search/playlist?query=${query}`)
         .then(res => res.json())
-        const artists = await fetch(`http://localhost:5000/v1/search/artist?query=${query}`)
+        const artists = await fetch(`${SERVER_HOST}/v1/search/artist?query=${query}`)
         .then(res => res.json())
 
 
